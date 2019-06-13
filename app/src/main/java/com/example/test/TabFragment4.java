@@ -1,7 +1,6 @@
 package com.example.test;
 
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,19 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class TabFragment3 extends Fragment {
+
+public class TabFragment4 extends Fragment {
 
     private View v;
     private Button button1;
 
-    public static TabFragment3 newInstance(){
-        TabFragment3 f = new TabFragment3();
+    public static TabFragment4 newInstance(){
+        TabFragment4 f = new TabFragment4();
         Bundle arg = new Bundle();
         f.setArguments(arg);
         return f;
     }
 
-    public TabFragment3() {
+    public TabFragment4() {
         // Required empty public constructor
     }
 
@@ -30,7 +30,7 @@ public class TabFragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.tab_fragment3, container, false);
+        v = inflater.inflate(R.layout.tab_fragment4, container, false);
         button1 = v.findViewById(R.id.button_cancel);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

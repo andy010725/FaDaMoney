@@ -13,6 +13,10 @@ import android.widget.Button;
 public class TabFragment1 extends Fragment {
     private View v;
     private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button7;
 
     public static TabFragment1 newInstance(){
         TabFragment1 f = new TabFragment1();
@@ -30,18 +34,54 @@ public class TabFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          v = inflater.inflate(R.layout.tab_fragment1, container, false);
+
+         /////信仰充值///////
          button1 = v.findViewById(R.id.button_row11);
          button1.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                    changefragmet(TabFragment2.newInstance());
+                 changefragmet(TabFragment2.newInstance());
              }
          });
+         /////韓語錄////////
+        button2 = v.findViewById(R.id.button_row12);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment3.newInstance());
+            }
+        });
+        ///////站台///////
+        button3 = v.findViewById(R.id.button_row13);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment4.newInstance());
+            }
+        });
+        /////發大財按鈕///////
+        button4 = v.findViewById(R.id.button_row21);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity xxx = (MainActivity) getActivity();
+                xxx.score = xxx.score+1000;
+                xxx.score_rate = 100;
+            }
+        });
+        /////付費選項///////
+        button7 = v.findViewById(R.id.button_row33);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment7.newInstance());
+            }
+        });
          return v;
     }
     private void changefragmet(android.support.v4.app.Fragment f){
     android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-    transaction.replace(R.id.fragment4,f);
+    transaction.replace(R.id.layout_fragment,f);
     transaction.commitNowAllowingStateLoss();
     }
 }

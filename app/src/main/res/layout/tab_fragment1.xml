@@ -20,21 +20,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="發大財" />
+                android:text="信仰充值" />
 
             <Button
                 android:id="@+id/button_row12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row12" />
+                android:text="韓語錄" />
 
             <Button
                 android:id="@+id/button_row13"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row13" />
+                android:text="站台" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row21" />
+                android:text="發大財" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row33" />
+                android:text="付費選項" />
         </LinearLayout>
     </LinearLayout>
 

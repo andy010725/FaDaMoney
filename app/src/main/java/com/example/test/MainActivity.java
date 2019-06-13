@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler = new Handler();
     public int score = 0;
     public int score2 = 0;
+    public int score_rate=1; // 跳錢的倍率
     public int stop = 0;
     TextView mSocre;
     ImageView image;
@@ -32,23 +34,29 @@ public class MainActivity extends AppCompatActivity {
         image = findViewById(R.id.imageView);
         mSocre = findViewById(R.id.score);
 
+        SharedPreferences settings = getSharedPreferences("myPre", 0);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        score = settings.getInt("score",score);
+        score_rate = settings.getInt("score_rate",score_rate);
+
+
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 int a = 1;
-                score = 0;
-                score2 =0;
                 stop = 0;
                 while (a > 0) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                    score++;
+                    score=score+score_rate;
                     score2++;
+                    editor.putInt("score",score).commit();
+                    editor.putInt("score_rate",score_rate).commit();
                     Log.v("test", "count is:" + score);
                     handler.post(new Runnable() {
                         public void run() {
@@ -69,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+
+
+
 
     }
     /////////////////以上是mainActivity/////////////////////////////

@@ -42,7 +42,7 @@ public class TabFragment2 extends Fragment {
     }
     private void changefragmet(android.support.v4.app.Fragment f){
         android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment4,f);
+        transaction.replace(R.id.layout_fragment,f);
         transaction.commitNowAllowingStateLoss();
     }
 }
