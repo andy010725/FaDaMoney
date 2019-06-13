@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     public int stop = 0;
     TextView mSocre;
     ImageView image;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,23 +37,27 @@ public class MainActivity extends AppCompatActivity {
         image = findViewById(R.id.imageView);
         mSocre = findViewById(R.id.score);
 
+        SharedPreferences settings = getSharedPreferences("myPre", 0);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        score = settings.getInt("score",score);
+
+
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 int a = 1;
-                score = 0;
-                score2 =0;
                 stop = 0;
                 while (a > 0) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                     score++;
                     score2++;
+                    editor.putInt("score",score).commit();
                     Log.v("test", "count is:" + score);
                     handler.post(new Runnable() {
                         public void run() {
@@ -69,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+
+
+
 
     }
     /////////////////以上是mainActivity/////////////////////////////
