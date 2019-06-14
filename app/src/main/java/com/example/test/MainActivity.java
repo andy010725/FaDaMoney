@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
     public int score_rate = 1; // 跳錢的倍率
     public int stop = 0;
     public int level = 1;
+    public int levelpoint = 0;
+    public int fadamoney = 100;
+    public int sec = 1000;
     public String job = "職位: 無業";
     TextView Socre_text;
     TextView job_text;
+    TextView text_saying;
     ImageView image;
     TextView textlevel;
+    public int exaggerate = 1;
+    public int blame = 1;
+    public int charm = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Socre_text = findViewById(R.id.score);
         textlevel = findViewById(R.id.textlevel);
         job_text = findViewById(R.id.textjob);
+        text_saying = findViewById(R.id.text_saying);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -49,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         level = settings.getInt("level", level);
         exp = settings.getInt("exp", exp);
         job = settings.getString("job", job);
+        levelpoint = settings.getInt("levelpoint",levelpoint);
+        exaggerate = settings.getInt("exaggerate",exaggerate);
+        blame = settings.getInt("blame",blame);
+        charm = settings.getInt("charm",charm);
+        fadamoney = settings.getInt("fadamoney",fadamoney);
+        sec = settings.getInt("sec",sec);
         //////////初始設定//////////////////////
         textlevel.setText("等級: " + Integer.toString(level));
         update(score);
@@ -61,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 stop = 0;
                 while (a > 0) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(sec);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -71,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
                     editor.putInt("score", score).commit();
                     editor.putInt("exp", exp).commit();
                     editor.putInt("score_rate", score_rate).commit();
+                    editor.putInt("level",level).commit();
+                    editor.putInt("levelpoint",levelpoint).commit();
+                    editor.putInt("exaggerate",exaggerate).commit();
+                    editor.putInt("blame",blame).commit();
+                    editor.putInt("charm",charm).commit();
+                    editor.putInt("fadamoney",fadamoney);
+                    editor.putInt("sec",sec);
                     Log.v("test", "count is:" + score);
                     //////////////需要去改變mainActivity時要用handler//////////////
                     handler.post(new Runnable() {
@@ -83,47 +105,62 @@ public class MainActivity extends AppCompatActivity {
                                 } else {
                                     updateMove(2);
                                 }
+                                text_saying.setVisibility(View.INVISIBLE);
                             } else {
-                                image.setImageResource(R.drawable.fadamoney);
+                                image.setImageResource(R.drawable.hanzon3);
+                                text_saying.setVisibility(View.VISIBLE);
                                 stop = 0;
                             }
 
                             ///////////判斷升等////////////////
+                            Log.v("asd",Integer.toString(level));
                             switch (level) {
                                 case 1:
                                     if (exp > 1000) {
                                         level = 2;
+                                        levelpoint +=1;
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                     } else {
+                                        editor.putInt("score",score).commit();
+                                        editor.putInt("score_rate",score_rate).commit();
+                                        editor.putInt("exp",exp).commit();
                                         editor.putInt("level", level).commit();
                                         editor.putString("job", job).commit();
-                                    }  ///被罷免後要存檔//
+                                        editor.putInt("levelpoint",levelpoint).commit();
+                                        editor.putInt("fadamoney",fadamoney).commit();
+                                        editor.putInt("sec",sec).commit();
+
+                                    } break; ///被罷免後要存檔//
                                 case 2:
-                                    if (exp > 20000) {
+                                    if (exp > 2000) {
                                         level = 3;
+                                        levelpoint +=1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                    }
+                                    }break;
                                 case 3:
-                                    if (exp > 200000) {
+                                    if (exp > 3000) {
                                         level = 4;
+                                        levelpoint +=1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                    }
+                                    }break;
                                 case 4:
-                                    if (exp > 1000000) {
+                                    if (exp > 4000) {
                                         level = 5;
+                                        levelpoint +=1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                 case 5:
-                                    if (exp > 20000000) {
+                                    if (exp > 5000) {
                                         level = 6;
+                                        levelpoint +=1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                    }
+                                    }break;
                             }
                         }
                     });
@@ -135,14 +172,14 @@ public class MainActivity extends AppCompatActivity {
 
     /////////////////以上是mainActivity/////////////////////////////
     public void update(int i) {
-        Socre_text.setText("聲勢 : " + Integer.toString(i));
+        Socre_text.setText("聲勢 : " + Integer.toString(i)+"    +"+Integer.toString(score_rate)+"/秒");
     }
 
     public void updateMove(int i) {
         if (i == 1) {
-            image.setImageResource(R.drawable.bird);
+            image.setImageResource(R.drawable.hanzon);
         } else {
-            image.setImageResource(R.drawable.bird2);
+            image.setImageResource(R.drawable.hanzon2);
         }
     }
 

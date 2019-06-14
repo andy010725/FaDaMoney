@@ -6,10 +6,12 @@
     tools:context=".TabFragment1">
 
     <LinearLayout
+        android:id="@+id/row1"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:orientation="vertical"
-        android:id="@+id/row1">
+        android:background="@color/colorback"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -19,22 +21,34 @@
                 android:id="@+id/button_row11"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="充值" />
+                android:background="@color/colorButton"
+                android:text="能力值"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_row12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="韓語錄" />
+                android:background="@color/colorButton"
+                android:text="韓語錄"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_row13"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="站台" />
+                android:background="@color/colorButton"
+                android:text="站台"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,8 +60,12 @@
                 android:id="@+id/button_row21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="發大財" />
+                android:background="@color/colorButton"
+                android:text="發大財"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,22 +77,34 @@
                 android:id="@+id/button_row31"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="收購" />
+                android:background="@color/colorButton"
+                android:text="收購"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_row32"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="競選" />
+                android:background="@color/colorButton"
+                android:text="競選"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_row33"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:text="付費選項" />
+                android:background="@color/colorButton"
+                android:text="付費選項"
+                android:textColor="@color/colorback"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
