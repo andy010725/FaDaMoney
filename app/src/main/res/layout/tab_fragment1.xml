@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="信仰充值" />
+                android:text="充值" />
 
             <Button
                 android:id="@+id/button_row12"
@@ -60,14 +60,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row31" />
+                android:text="收購" />
 
             <Button
                 android:id="@+id/button_row32"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="row32" />
+                android:text="競選" />
 
             <Button
                 android:id="@+id/button_row33"

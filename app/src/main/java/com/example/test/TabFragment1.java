@@ -16,6 +16,8 @@ public class TabFragment1 extends Fragment {
     private Button button2;
     private Button button3;
     private Button button4;
+    private Button button5;
+    private Button button6;
     private Button button7;
 
     public static TabFragment1 newInstance(){
@@ -65,8 +67,26 @@ public class TabFragment1 extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity xxx = (MainActivity) getActivity();
-                xxx.score = xxx.score+1000;
-                xxx.score_rate = 100;
+                xxx.score = xxx.score+100;
+                xxx.exp = xxx.exp+100;
+                xxx.score_rate = 10;
+                xxx.image.setImageResource(R.drawable.fadamoney);
+            }
+        });
+        ///////收購///////
+        button3 = v.findViewById(R.id.button_row31);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment5.newInstance());
+            }
+        });
+        ///////競選///////
+        button3 = v.findViewById(R.id.button_row32);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment6.newInstance());
             }
         });
         /////付費選項///////
