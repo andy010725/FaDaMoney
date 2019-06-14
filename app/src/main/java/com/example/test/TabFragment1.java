@@ -4,10 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 
 public class TabFragment1 extends Fragment {
@@ -20,7 +22,7 @@ public class TabFragment1 extends Fragment {
     private Button button6;
     private Button button7;
 
-    public static TabFragment1 newInstance(){
+    public static TabFragment1 newInstance() {
         TabFragment1 f = new TabFragment1();
         Bundle arg = new Bundle();
         f.setArguments(arg);
@@ -35,17 +37,18 @@ public class TabFragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         v = inflater.inflate(R.layout.tab_fragment1, container, false);
+        v = inflater.inflate(R.layout.tab_fragment1, container, false);
 
-         /////信仰充值///////
-         button1 = v.findViewById(R.id.button_row11);
-         button1.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 changefragmet(TabFragment2.newInstance());
-             }
-         });
-         /////韓語錄////////
+        /////能力值///////
+        button1 = v.findViewById(R.id.button_row11);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changefragmet(TabFragment2.newInstance());
+
+            }
+        });
+        /////韓語錄////////
         button2 = v.findViewById(R.id.button_row12);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,23 +70,22 @@ public class TabFragment1 extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity xxx = (MainActivity) getActivity();
-                xxx.score = xxx.score+100;
-                xxx.exp = xxx.exp+100;
-                xxx.score_rate = 10;
+                xxx.score = xxx.score + xxx.fadamoney;
+                xxx.exp = xxx.exp + xxx.fadamoney;
                 xxx.image.setImageResource(R.drawable.fadamoney);
             }
         });
         ///////收購///////
-        button3 = v.findViewById(R.id.button_row31);
-        button3.setOnClickListener(new View.OnClickListener() {
+        button5 = v.findViewById(R.id.button_row31);
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changefragmet(TabFragment5.newInstance());
             }
         });
         ///////競選///////
-        button3 = v.findViewById(R.id.button_row32);
-        button3.setOnClickListener(new View.OnClickListener() {
+        button6 = v.findViewById(R.id.button_row32);
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changefragmet(TabFragment6.newInstance());
@@ -97,11 +99,20 @@ public class TabFragment1 extends Fragment {
                 changefragmet(TabFragment7.newInstance());
             }
         });
-         return v;
+        return v;
     }
-    private void changefragmet(android.support.v4.app.Fragment f){
-    android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-    transaction.replace(R.id.layout_fragment,f);
-    transaction.commitNowAllowingStateLoss();
+
+    private void changefragmet(android.support.v4.app.Fragment f) {
+        android.support.v4.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.layout_fragment, f);
+        transaction.commitNowAllowingStateLoss();
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+        button6.setEnabled(false);
+        button7.setEnabled(false);
+
     }
 }

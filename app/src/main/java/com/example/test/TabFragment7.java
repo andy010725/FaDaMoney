@@ -52,6 +52,12 @@ public class TabFragment7 extends Fragment {
                 xxx.textlevel.setText("等級: 1" );
                 xxx.job = "職位: 無業";
                 xxx.job_text.setText(xxx.job);
+                xxx.levelpoint = 0;
+                xxx.exaggerate = 1;
+                xxx.blame = 1;
+                xxx.charm = 1;
+                xxx.fadamoney = 100;
+                xxx.sec = 1000;
             }
         });
         return v;
