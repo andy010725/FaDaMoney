@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
                             text_saying.setVisibility(View.INVISIBLE);
 
                             ///////////判斷升等////////////////
-                            Log.v("asd", Integer.toString(level));
+                            Log.v("level", Integer.toString(level));
+                            Log.v("bin",Integer.toString(binbin));
                             switch (level) {
                                 case 1:
                                     if (exp > 1000) {
@@ -146,6 +147,38 @@ public class MainActivity extends AppCompatActivity {
                                 case 5:
                                     if (exp > 5000) {
                                         level = 6;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 6:
+                                    if (exp > 6000) {
+                                        level = 7;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 7:
+                                    if (exp > 7000) {
+                                        level = 8;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 8:
+                                    if (exp > 8000) {
+                                        level = 9;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 9:
+                                    if (exp > 9000) {
+                                        level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
