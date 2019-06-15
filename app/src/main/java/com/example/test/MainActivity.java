@@ -52,7 +52,13 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
-
+//////////////////////////////////////
+    public int LL = 0;
+    public int TW = 0;
+    public int CH = 0;
+    public int road = 0;
+    public int Inf = 0;
+    public int cute = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -237,7 +243,13 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("binbin", binbin);
         editor.putInt("inwen",inwen );
         editor.putInt("gwochun",gwochun );
-    }
+        editor.putInt("LL",LL);
+        editor.putInt("TW",TW);
+        editor.putInt("CH",CH);
+        editor.putInt("Road",road);
+        editor.putInt("Inf",Inf);
+        editor.putInt("cute",cute);
+        }
     /////讀檔//////
     public void loading(SharedPreferences settings){
         score = settings.getInt("score", score);
@@ -256,6 +268,13 @@ public class MainActivity extends AppCompatActivity {
         binbin = settings.getInt("binbin",binbin );
         inwen= settings.getInt("inwen",inwen );
         gwochun= settings.getInt("gwochun",gwochun );
+        ////////道具/////////
+        LL = settings.getInt("LL",LL);
+        TW = settings.getInt("TW",TW);
+        CH = settings.getInt("CH",CH);
+        road = settings.getInt("Road",road);
+        Inf = settings.getInt("Inf",Inf);
+        cute = settings.getInt("cute",cute);
     }
     /////遭遇事件/////
     public void lunchSecondAct(int i){
