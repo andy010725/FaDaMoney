@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
 public class TabFragment3 extends Fragment {
 
     private View v;
@@ -72,6 +71,8 @@ public class TabFragment3 extends Fragment {
                     xxx.binbin = 1;
                     button.setEnabled(false);
                     xxx.suport1.setVisibility(View.VISIBLE);
+                    /////////////////////////////////////////////////////
+                    xxx.score_rate +=1000;
                 }
             }
         });
@@ -84,6 +85,8 @@ public class TabFragment3 extends Fragment {
                     xxx.inwen = 1;
                     button2.setEnabled(false);
                     xxx.suport2.setVisibility(View.VISIBLE);
+                    //////////////////////////////////////////////////////////////
+                    xxx.fadamoney +=10000;
                 }
             }
         });
@@ -96,6 +99,8 @@ public class TabFragment3 extends Fragment {
                     xxx.gwochun = 1;
                     button3.setEnabled(false);
                     xxx.suport3.setVisibility(View.VISIBLE);
+                    /////////////////////////////////////////////////////////
+                    xxx.fadamoney -= 200;
                 }
             }
         });
@@ -107,4 +112,3 @@ public class TabFragment3 extends Fragment {
         transaction.commitNowAllowingStateLoss();
     }
 }
-

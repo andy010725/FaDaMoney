@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
+
 public class TabFragment2 extends Fragment {
 
     private View v;
@@ -85,13 +86,13 @@ public class TabFragment2 extends Fragment {
                 switch (xxx.exaggerate) {
 
                     case 2:
-                        xxx.score_rate = 100;
+                        xxx.score_rate +=99;
                         break;
                     case 3:
-                        xxx.score_rate = 1000;
+                        xxx.score_rate += 900;
                         break;
                     case 4:
-                        xxx.score_rate = 5000;
+                        xxx.score_rate += 4000;
                         break;
                 }
 
@@ -122,13 +123,13 @@ public class TabFragment2 extends Fragment {
                 switch (xxx.blame) {
 
                     case 2:
-                        xxx.fadamoney = 500;
+                        xxx.fadamoney += 400;
                         break;
                     case 3:
-                        xxx.fadamoney = 1000;
+                        xxx.fadamoney +=500;
                         break;
                     case 4:
-                        xxx.fadamoney = 5000;
+                        xxx.fadamoney +=4000;
                         break;
                 }
 
@@ -159,13 +160,13 @@ public class TabFragment2 extends Fragment {
                 switch (xxx.charm) {
 
                     case 2:
-                        xxx.sec = 700;
+                        xxx.sec -=300;
                         break;
                     case 3:
-                        xxx.sec = 600;
+                        xxx.sec -=100;
                         break;
                     case 4:
-                        xxx.sec = 500;
+                        xxx.sec -=100;
                         break;
                 }
 

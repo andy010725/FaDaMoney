@@ -72,8 +72,8 @@
             android:id="@+id/imageView"
             android:layout_width="295dp"
             android:layout_height="253dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="48dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="49dp"
             android:layout_marginRight="49dp"
@@ -125,12 +125,20 @@
 
         <ImageView
             android:id="@+id/suport1"
-            android:layout_width="177dp"
+            android:layout_width="163dp"
             android:layout_height="177dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/bird2" />
+        <TextView
+            android:id="@+id/special"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/special1"
+            android:visibility="invisible"
+            />
+        />
     </android.support.constraint.ConstraintLayout>
 
     <fragment

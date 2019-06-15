@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="horizontal"
-        android:background="@android:color/darker_gray">
+        android:background="@color/colorgold">
         <Button
             android:id="@+id/button_zero"
             android:layout_width="wrap_content"

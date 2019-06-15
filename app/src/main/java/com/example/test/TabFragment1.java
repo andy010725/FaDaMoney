@@ -21,6 +21,7 @@ public class TabFragment1 extends Fragment {
     private Button button6;
     private Button button7;
 
+
     public static TabFragment1 newInstance() {
         TabFragment1 f = new TabFragment1();
         Bundle arg = new Bundle();
@@ -37,6 +38,8 @@ public class TabFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab_fragment1, container, false);
+
+
 
         /////能力值///////
         button1 = v.findViewById(R.id.button_row11);
@@ -73,6 +76,7 @@ public class TabFragment1 extends Fragment {
                 xxx.exp = xxx.exp + xxx.fadamoney;
                 xxx.image.setImageResource(R.drawable.hanzon3);
                 xxx.text_saying.setVisibility(View.VISIBLE);
+                xxx.special.setVisibility(View.VISIBLE);
             }
         });
         ///////收購///////

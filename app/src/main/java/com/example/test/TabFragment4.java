@@ -13,6 +13,9 @@ public class TabFragment4 extends Fragment {
 
     private View v;
     private Button button1;
+    private Button button;
+    private Button button2;
+    private Button button3;
 
     public static TabFragment4 newInstance(){
         TabFragment4 f = new TabFragment4();
@@ -31,11 +34,37 @@ public class TabFragment4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab_fragment4, container, false);
+        final MainActivity xxx = (MainActivity) getActivity();
+
         button1 = v.findViewById(R.id.button_cancel);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changefragmet(TabFragment1.newInstance());
+            }
+        });
+        button = v.findViewById(R.id.button);
+        button2 = v.findViewById(R.id.button2);
+        button3 = v.findViewById(R.id.button3);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xxx.lunchthirdAct(1);/////////////文本1///////////
+            }
+        });
+        ////英文////
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xxx.lunchthirdAct(2);/////////////文本2///////////
+            }
+        });
+        ////國唱///
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xxx.lunchthirdAct(3);///////////文本3//////////////
             }
         });
         return v;

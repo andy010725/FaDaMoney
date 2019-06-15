@@ -80,7 +80,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:background="@color/colorButton"
-                android:text="收購"
+                android:text="道具"
                 android:textColor="@color/colorback"
                 android:textStyle="bold" />
 

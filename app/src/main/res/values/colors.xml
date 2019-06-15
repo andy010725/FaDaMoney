@@ -7,4 +7,9 @@
     <color name="colorback">#F5F5F5</color>
     <color name="colorpink">#D52626</color>
     <color name="colorblue">#2F81FF</color>
+    <color name="colordeepblue">#003ACC</color>
+    <color name="colorbackground">#F4F7FF</color>
+    <color name="colorpurple">#2C03C0</color>
+    <color name="colorgold">#E7B41D</color>
+    <color name="colororange">#DB7300</color>
 </resources>

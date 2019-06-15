@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,6 +21,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE =
+            "com.example.android";
     private Long startTime;
     private Handler handler = new Handler();
     public int score = 0;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView suport2;
     ImageView suport3;
     TextView textlevel;
+    TextView special;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         suport1 = findViewById(R.id.suport1);
         suport2 = findViewById(R.id.suport2);
         suport3 = findViewById(R.id.suport3);
+        special = findViewById(R.id.special);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                                 updateMove(2);
                             }
                             text_saying.setVisibility(View.INVISIBLE);
+                            special.setVisibility(View.INVISIBLE);
 
                             ///////////判斷升等////////////////
                             Log.v("asd", Integer.toString(level));
@@ -118,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
+                                        lunchSecondAct(1);
                                     }
                                     break;
                                 case 2:
@@ -146,6 +153,38 @@ public class MainActivity extends AppCompatActivity {
                                 case 5:
                                     if (exp > 5000) {
                                         level = 6;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 6:
+                                    if (exp > 6000) {
+                                        level = 7;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 7:
+                                    if (exp > 7000) {
+                                        level = 8;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 8:
+                                    if (exp > 8000) {
+                                        level = 9;
+                                        levelpoint += 1;
+                                        editor.putInt("level", level).commit();
+                                        textlevel.setText("等級: " + Integer.toString(level));
+                                    }
+                                    break;
+                                case 9:
+                                    if (exp > 9000) {
+                                        level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
@@ -216,6 +255,18 @@ public class MainActivity extends AppCompatActivity {
         binbin = settings.getInt("binbin",binbin );
         inwen= settings.getInt("inwen",inwen );
         gwochun= settings.getInt("gwochun",gwochun );
+    }
+    /////遭遇事件/////
+    public void lunchSecondAct(int i){
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
+        startActivity(intent);
+    }
+    ////韓語錄劇情/////
+    public void lunchthirdAct(int i){
+        Intent intent = new Intent(this, Main3Activity.class);
+        intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
+        startActivity(intent);
     }
 
 }
