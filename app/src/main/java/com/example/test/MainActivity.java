@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.android";
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public int levelpoint = 0;
     public int fadamoney = 100;
     public int sec = 1000;
+    public  int background = 1;
     public String job = "職位: 無業";
     TextView Socre_text;
     TextView job_text;
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView suport3;
     TextView textlevel;
     TextView special;
+    TextView background_view;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -52,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
-
+    //////////////////////////////////////
+    public int LL = 0;
+    public int TW = 0;
+    public int CH = 0;
+    public int road = 0;
+    public int Inf = 0;
+    public int cute = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         suport2 = findViewById(R.id.suport2);
         suport3 = findViewById(R.id.suport3);
         special = findViewById(R.id.special);
+        background_view = findViewById(R.id.background_mid);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -85,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         if (gwochun == 1) {
             suport3.setVisibility(View.VISIBLE);
         }
+        setBackground(background);
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -237,6 +248,13 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("binbin", binbin);
         editor.putInt("inwen",inwen );
         editor.putInt("gwochun",gwochun );
+        editor.putInt("LL",LL);
+        editor.putInt("TW",TW);
+        editor.putInt("CH",CH);
+        editor.putInt("Road",road);
+        editor.putInt("Inf",Inf);
+        editor.putInt("cute",cute);
+        editor.putInt("background",background);
     }
     /////讀檔//////
     public void loading(SharedPreferences settings){
@@ -256,6 +274,14 @@ public class MainActivity extends AppCompatActivity {
         binbin = settings.getInt("binbin",binbin );
         inwen= settings.getInt("inwen",inwen );
         gwochun= settings.getInt("gwochun",gwochun );
+        ////////道具/////////
+        LL = settings.getInt("LL",LL);
+        TW = settings.getInt("TW",TW);
+        CH = settings.getInt("CH",CH);
+        road = settings.getInt("Road",road);
+        Inf = settings.getInt("Inf",Inf);
+        cute = settings.getInt("cute",cute);
+        background= settings.getInt("background",background);
     }
     /////遭遇事件/////
     public void lunchSecondAct(int i){
@@ -268,6 +294,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Main3Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
         startActivity(intent);
+    }
+    public void setBackground(int i){
+        switch (i){
+            case 1:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.taipei));
+                break;
+            case 2:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.kaoshion));
+                break;
+            case 3:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.earth));
+                break;
+        }
     }
 
 }

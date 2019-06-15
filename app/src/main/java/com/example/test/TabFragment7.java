@@ -65,6 +65,15 @@ public class TabFragment7 extends Fragment {
                 xxx.suport1.setVisibility(View.INVISIBLE);
                 xxx.suport2.setVisibility(View.INVISIBLE);
                 xxx.suport3.setVisibility(View.INVISIBLE);
+                ///道具///
+                xxx.LL = 0;
+                xxx.TW = 0;
+                xxx.CH = 0;
+                xxx.road =0;
+                xxx.Inf = 0;
+                xxx.cute = 0;
+                xxx.background=1;
+                xxx.setBackground(1);
             }
         });
         return v;

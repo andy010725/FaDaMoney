@@ -36,6 +36,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="18dp"
             android:text="語錄1"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="4dp"
             android:text="語錄2"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +64,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="4dp"
             android:text="語錄3"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="禿子跟著月亮走，我們跟著禿子走。"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -87,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="東西賣得出去，人進得來，高雄發大財。"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -95,6 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="16dp"
             android:text="為了中華民國，不惜粉身碎骨。"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -142,6 +148,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="需要職位:北農總經理"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/button"
             app:layout_constraintTop_toTopOf="@+id/button" />
 
@@ -153,6 +160,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="需要職位:高雄市長"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/button2"
             app:layout_constraintTop_toTopOf="@+id/button2" />
 
@@ -164,6 +172,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:text="需要職位:台灣總統"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toEndOf="@+id/button3"
             app:layout_constraintTop_toTopOf="@+id/button3" />
 

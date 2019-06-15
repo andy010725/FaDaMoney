@@ -8,16 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 public class TabFragment5 extends Fragment {
 
     private View v;
     private Button button1;
-    private Button button_KH;
-    private Button button_TWper;
-    private Button button_CHper;
-    private Button button_earth;
-    private Button button_galaxy;
+    private Button button_LL;
+    private Button button_TW;
+    private Button button_CH;
+    private Button button_Road;
+    private Button button_Inf;
+    private Button button_cute;
     private String job;
     private Handler handler = new Handler();
 
@@ -40,122 +40,121 @@ public class TabFragment5 extends Fragment {
         v = inflater.inflate(R.layout.tab_fragment5, container, false);
         //////////////////////////setButtonID///////////////////////////////////////////////////////
         button1 = v.findViewById(R.id.button_cancel);
-        button_KH = v.findViewById(R.id.button);
-        button_TWper = v.findViewById(R.id.button2);
-        button_CHper = v.findViewById(R.id.button3);
-        button_earth = v.findViewById(R.id.button4);
-        button_galaxy = v.findViewById(R.id.button5);
+        button_LL = v.findViewById(R.id.button);
+        button_TW = v.findViewById(R.id.button2);
+        button_CH = v.findViewById(R.id.button3);
+        button_Road = v.findViewById(R.id.button4);
+        button_Inf = v.findViewById(R.id.button5);
+        button_cute = v.findViewById(R.id.button6);
         ////////////////////////////////////////////////////////////////////////////////////////////
         final MainActivity xxx = (MainActivity) getActivity();
-        job = xxx.job;
-        switch (job){
-
-            case "職位: 無業" :
-                break;
-
-            case "職位: 北農總經理":
-                break;
-
-            case "職位: 高雄市長":
-                button_KH.setEnabled(false);
-                break;
-
-            case "職位: 台灣總統":
-                button_KH.setEnabled(false);
-                button_TWper.setEnabled(false);
-                break;
-
-            case "職位: 中國總書記":
-                button_KH.setEnabled(false);
-                button_TWper.setEnabled(false);
-                button_CHper.setEnabled(false);
-                break;
-
-            case "職位: 地球領導人":
-                button_KH.setEnabled(false);
-                button_TWper.setEnabled(false);
-                button_CHper.setEnabled(false);
-                button_earth.setEnabled(false);
-                break;
-
-            case "職位: 銀河系霸主":
-                button_KH.setEnabled(false);
-                button_CHper.setEnabled(false);
-                button_earth.setEnabled(false);
-                button_TWper.setEnabled(false);
-                button_galaxy.setEnabled(false);
-                break;
-
-
-
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        /////初始設定/////
+        if (xxx.LL==1){
+            button_LL.setEnabled(false);
+        }else {
+            button_LL.setEnabled(true);
         }
+        if (xxx.TW==1){
+            button_TW.setEnabled(false);
+        }else {
+            button_TW.setEnabled(true);
+        }
+        if (xxx.CH==1){
+            button_CH.setEnabled(false);
+        }else {
+            button_CH.setEnabled(true);
+        }
+        if (xxx.road==1){
+            button_Road.setEnabled(false);
+        }else {
+            button_Road.setEnabled(true);
+        }
+        if (xxx.Inf==1){
+            button_Inf.setEnabled(false);
+        }else {
+            button_Inf.setEnabled(true);
+        }
+        if(xxx.cute==1){
+            button_cute.setEnabled(false);
+        }else {
+            button_cute.setEnabled(true);
+        }
+        /////////////////////////////////////////////////
 
+        /////////////////////////ButtonAction///////////////////////////////////////////////////////
 
-        /////////////////////////////ButtonAction///////////////////////////////////////////////////
-        button_KH.setOnClickListener(new View.OnClickListener() {
+        /////////////////////////滷肉飯/////////////////////////////////////////////////////////////
+        button_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(xxx.score>=4000) {
+                    xxx.score -= 40000;
+                    xxx.LL = 1;
+                    button_LL.setEnabled(false);
+                }
+            }
+        });
+        /////////////////////////////////台灣價值//////////////////////////////////////////////////
 
-                if(xxx.job=="職位: 北農總經理" && xxx.score>=10000 && xxx.level>=2 && xxx.binbin==1){
-                    xxx.job = "職位: 高雄市長";
-                    xxx.job_text.setText(xxx.job);
-                    button_KH.setEnabled(false);
+        button_TW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (xxx.score>=10000) {
+                    xxx.score -= 10000;
+                    xxx.TW = 1;
+                    button_TW.setEnabled(false);
+                }
+            }
+        });
+        ///////////////////////////////五星旗///////////////////////////////////////////////////////
+
+        button_CH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (xxx.score>=30000) {
+                    xxx.score -=30000;
+                    xxx.CH = 1;
+                    button_CH.setEnabled(false);
                 }
             }
         });
 
-
-        button_TWper.setOnClickListener(new View.OnClickListener() {
+        ///////////////////////////////////一帶一路////////////////////////////////////////////////
+        button_Road.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(xxx.job=="職位: 高雄市長" && xxx.score>=30000 && xxx.level>=4) {
-                    xxx.job = "職位: 台灣總統";
-                    xxx.job_text.setText(xxx.job);
-                    button_TWper.setEnabled(false);
+                if (xxx.score>=50000){
+                    xxx.score-=50000;
+                    xxx.road = 1;
+                    button_Road.setEnabled(false);
                 }
             }
         });
 
-
-        button_CHper.setOnClickListener(new View.OnClickListener() {
+        /////////////////////////////////無限手套//////////////////////////////////
+        button_Inf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(xxx.job=="職位: 台灣總統" && xxx.score>=50000 && xxx.level>=6 && xxx.inwen==1) {
-                    xxx.job = "職位: 中國總書記";
-                    xxx.job_text.setText(xxx.job);
-                    button_CHper.setEnabled(false);
+                if (xxx.score>= 100000){
+                    xxx.score-=100000;
+                    xxx.Inf = 1;
+                    button_Inf.setEnabled(false);
                 }
             }
         });
 
-
-        button_earth.setOnClickListener(new View.OnClickListener() {
+        ///////////////////////////////公仔/////////////////////////////////////////////////////////
+        button_cute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (xxx.job=="職位: 中國總書記" && xxx.score>=80000 && xxx.level>=8) {
-                    xxx.job = "職位: 地球領導人";
-                    xxx.job_text.setText(xxx.job);
-                    button_earth.setEnabled(false);
+                if (xxx.score>=8000){
+                    xxx.score-=8000;
+                    xxx.cute = 1;
+                    button_cute.setEnabled(false);
                 }
             }
         });
-
-
-        button_galaxy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(xxx.job=="職位: 地球領導人" && xxx.score>=100000 && xxx.level>=10) {
-                    xxx.job = "職位: 銀河系霸主";
-                    xxx.job_text.setText(xxx.job);
-                    button_galaxy.setEnabled(false);
-                }
-            }
-        });
-
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
