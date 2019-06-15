@@ -115,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
                             special.setVisibility(View.INVISIBLE);
 
                             ///////////判斷升等////////////////
-                            Log.v("asd", Integer.toString(level));
+                            Log.v("level", Integer.toString(level));
+                            Log.v("bin",Integer.toString(binbin));
                             switch (level) {
                                 case 1:
                                     if (exp > 1000) {
