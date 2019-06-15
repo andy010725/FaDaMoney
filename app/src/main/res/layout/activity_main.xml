@@ -8,42 +8,59 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="19dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:layout_weight="1"
+            android:text="Score : 0 "
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:text="Score : 0 " />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/score_persec"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="21dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:text="+1/單位時間 "
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/score" />
 
-            <TextView
-                android:id="@+id/textjob"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="職位: 北農總經理" />
 
-            <TextView
-                android:id="@+id/textlevel"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="等級: 1" />
-        </LinearLayout>
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textjob"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_weight="1"
+            android:text="職位: 北農總經理"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textlevel"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_weight="1"
+            android:text="等級: 1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textjob"
+            app:layout_constraintTop_toBottomOf="@+id/textjob" />
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -53,21 +70,21 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="261dp"
-            android:layout_height="220dp"
+            android:layout_width="295dp"
+            android:layout_height="253dp"
             android:layout_marginStart="48dp"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="49dp"
             android:layout_marginRight="49dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="8dp"
             android:layout_weight="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.853"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/hanzon" />
 
         <TextView
@@ -83,6 +100,37 @@
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+
+        <ImageView
+            android:id="@+id/suport3"
+            android:layout_width="150dp"
+            android:layout_height="177dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="84dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/bird2" />
+
+        <ImageView
+            android:id="@+id/suport2"
+            android:layout_width="143dp"
+            android:layout_height="168dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/bird" />
+
+        <ImageView
+            android:id="@+id/suport1"
+            android:layout_width="177dp"
+            android:layout_height="177dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/bird2" />
     </android.support.constraint.ConstraintLayout>
 
     <fragment

@@ -47,7 +47,7 @@ public class TabFragment1 extends Fragment {
 
             }
         });
-        /////韓語錄////////
+        ///////站台///////
         button2 = v.findViewById(R.id.button_row12);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +55,7 @@ public class TabFragment1 extends Fragment {
                 changefragmet(TabFragment3.newInstance());
             }
         });
-        ///////站台///////
+        /////韓語錄////////
         button3 = v.findViewById(R.id.button_row13);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,8 @@ public class TabFragment1 extends Fragment {
                 MainActivity xxx = (MainActivity) getActivity();
                 xxx.score = xxx.score + xxx.fadamoney;
                 xxx.exp = xxx.exp + xxx.fadamoney;
-                xxx.stop=1;
+                xxx.image.setImageResource(R.drawable.hanzon3);
+                xxx.text_saying.setVisibility(View.VISIBLE);
             }
         });
         ///////收購///////

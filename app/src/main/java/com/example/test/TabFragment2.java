@@ -53,7 +53,7 @@ public class TabFragment2 extends Fragment {
         textview_exaggerate.setText(Integer.toString(xxx.exaggerate));
         textview_blame.setText(Integer.toString(xxx.blame));
         textview_charm.setText(Integer.toString(xxx.charm));
-        textview_lvpoint.setText("技能點:"+Integer.toString(xxx.levelpoint));
+        textview_lvpoint.setText("技能點:\n   "+Integer.toString(xxx.levelpoint));
 
         if (xxx.levelpoint<=0){
             button_exaggerate.setEnabled(false);
@@ -80,7 +80,7 @@ public class TabFragment2 extends Fragment {
                 xxx.exaggerate +=1;
                 textview_exaggerate.setText(Integer.toString(xxx.exaggerate));
                 xxx.levelpoint -=1;
-                textview_lvpoint.setText("技能點:"+ Integer.toString(xxx.levelpoint));
+                textview_lvpoint.setText("技能點:\n   "+ Integer.toString(xxx.levelpoint));
 
                 switch (xxx.exaggerate) {
 
@@ -116,7 +116,7 @@ public class TabFragment2 extends Fragment {
                 xxx.blame +=1;
                 textview_blame.setText(Integer.toString(xxx.blame));
                 xxx.levelpoint -=1;
-                textview_lvpoint.setText("技能點:"+Integer.toString(xxx.levelpoint));
+                textview_lvpoint.setText("技能點:\n   "+Integer.toString(xxx.levelpoint));
 
 
                 switch (xxx.blame) {
@@ -152,7 +152,7 @@ public class TabFragment2 extends Fragment {
                 xxx.charm +=1;
                 textview_charm.setText(Integer.toString(xxx.charm));
                 xxx.levelpoint -=1;
-                textview_lvpoint.setText("技能點:"+Integer.toString(xxx.levelpoint));
+                textview_lvpoint.setText("技能點:\n   "+Integer.toString(xxx.levelpoint));
 
 
 

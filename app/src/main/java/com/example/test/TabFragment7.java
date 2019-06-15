@@ -47,16 +47,24 @@ public class TabFragment7 extends Fragment {
                 xxx.score_rate = 1;
                 xxx.exp = 0;
                 xxx.level = 1;
+                xxx.fadamoney = 100;
+                xxx.sec = 1000;
                 xxx.Socre_text.setText("0");
                 xxx.textlevel.setText("等級: 1");
                 xxx.job = "職位: 無業";
                 xxx.job_text.setText(xxx.job);
                 xxx.levelpoint = 0;
+                /////數值////
                 xxx.exaggerate = 1;
                 xxx.blame = 1;
                 xxx.charm = 1;
-                xxx.fadamoney = 100;
-                xxx.sec = 1000;
+                ////站台///
+                xxx.binbin = 0;
+                xxx.inwen = 0;
+                xxx.gwochun = 0;
+                xxx.suport1.setVisibility(View.INVISIBLE);
+                xxx.suport2.setVisibility(View.INVISIBLE);
+                xxx.suport3.setVisibility(View.INVISIBLE);
             }
         });
         return v;
