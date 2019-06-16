@@ -146,7 +146,7 @@ public class Main2Activity extends AppCompatActivity {
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score -= 40000;
+                        score += 40000;
                         plusalert(3);
                         replyIntent.putExtra(EXTRA_REPLY,score);
                         setResult(RESULT_OK,replyIntent);

@@ -25,9 +25,13 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.android";
+    public static final String EXTRA_SCORE =
+            "com.example.android_score";
+    public static final int TEXT_REQUEST = 1;
     private Long startTime;
     private Handler handler = new Handler();
     public int score = 0;
+    public int score_from_2 = 0;
     public int exp = 0;
     public int time = 0;
     public int score_rate = 1; // 跳錢的倍率
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     TextView special;
     TextView background_view;
     TextView exp_view;
+    TextView maxexp_view;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -93,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         littleback6 = findViewById(R.id.imageView18);
         exp_view =findViewById(R.id.textView16);
         background_view = findViewById(R.id.background_mid);
+        maxexp_view = findViewById(R.id.textView_maxexp);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -101,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         textlevel.setText("等級: " + Integer.toString(level));
         update(score);
         job_text.setText(job);
+        maxexp_view.setText("升等所需經驗: "+ "1000");
         if (binbin == 1) {
             suport1.setVisibility(View.VISIBLE);
         }
@@ -167,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 2;
                                         levelpoint += 1;
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        maxexp_view.setText("升等所需經驗: "+ "5000");
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
@@ -178,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 3;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "20000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(0);
                                     }
@@ -187,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 4;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "100000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(2);
                                     }
@@ -196,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 5;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "1000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(3);
                                     }
@@ -204,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 6;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "3000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -212,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 7;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "10000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -220,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 8;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "50000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -228,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 9;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("升等所需經驗: "+ "150000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -236,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
                                         level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setText("MAX");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -331,7 +347,20 @@ public class MainActivity extends AppCompatActivity {
     public void lunchSecondAct(int i){
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
-        startActivity(intent);
+        intent.putExtra(EXTRA_SCORE, score);
+        startActivityForResult(intent,TEXT_REQUEST);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.v("result_2", Integer.toString(resultCode));
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+
+                score_from_2 = data.getIntExtra(Main2Activity.EXTRA_REPLY, 0);
+                score = score+score_from_2;
+            }
+        }
     }
     ////韓語錄劇情/////
     public void lunchthirdAct(int i){

@@ -97,7 +97,7 @@ public class TabFragment6 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(xxx.job=="職位: 北農總經理" && xxx.score>=10000 && xxx.level>=2 && xxx.binbin==1 && xxx.LL==1){
+                if(xxx.job=="職位: 北農總經理" && xxx.score>=60000 && xxx.level>=2 && xxx.binbin==1 && xxx.LL==1){
                     xxx.job = "職位: 高雄市長";
                     xxx.job_text.setText(xxx.job);
                     xxx.hanalert(2);
@@ -113,7 +113,7 @@ public class TabFragment6 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(xxx.job=="職位: 高雄市長" && xxx.score>=30000 && xxx.level>=4 && xxx.TW==1) {
+                if(xxx.job=="職位: 高雄市長" && xxx.score>=230000 && xxx.level>=4 && xxx.TW==1) {
                     xxx.job = "職位: 台灣總統";
                     xxx.job_text.setText(xxx.job);
                     xxx.hanalert(3);
@@ -127,7 +127,7 @@ public class TabFragment6 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(xxx.job=="職位: 台灣總統" && xxx.score>=50000 && xxx.level>=6 && xxx.inwen==1 && xxx.CH==1) {
+                if(xxx.job=="職位: 台灣總統" && xxx.score>=1300000 && xxx.level>=6 && xxx.inwen==1 && xxx.CH==1) {
                     xxx.job = "職位: 中國總書記";
                     xxx.job_text.setText(xxx.job);
                     button_CHper.setEnabled(false);
@@ -140,7 +140,7 @@ public class TabFragment6 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (xxx.job=="職位: 中國總書記" && xxx.score>=80000 && xxx.level>=8 && xxx.road==1) {
+                if (xxx.job=="職位: 中國總書記" && xxx.score>=4000000 && xxx.level>=8 && xxx.road==1) {
                     xxx.job = "職位: 地球領導人";
                     xxx.job_text.setText(xxx.job);
                     xxx.setBack(3);
