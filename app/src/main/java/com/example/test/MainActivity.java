@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public int levelpoint = 0;
     public int fadamoney = 100;
     public int sec = 1000;
+    int background=1;
     public String job = "職位: 無業";
     TextView Socre_text;
     TextView job_text;
@@ -44,8 +45,16 @@ public class MainActivity extends AppCompatActivity {
     ImageView suport1;
     ImageView suport2;
     ImageView suport3;
+    ImageView littleback1;
+    ImageView littleback2;
+    ImageView littleback3;
+    ImageView littleback4;
+    ImageView littleback5;
+    ImageView littleback6;
     TextView textlevel;
     TextView special;
+    TextView background_view;
+    TextView exp_view;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -76,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
         suport2 = findViewById(R.id.suport2);
         suport3 = findViewById(R.id.suport3);
         special = findViewById(R.id.special);
+        littleback1 = findViewById(R.id.imageView11);
+        littleback2 = findViewById(R.id.imageView12);
+        littleback3 = findViewById(R.id.imageView13);
+        littleback4 = findViewById(R.id.imageView14);
+        littleback5 = findViewById(R.id.imageView15);
+        littleback6 = findViewById(R.id.imageView18);
+        exp_view =findViewById(R.id.textView16);
+        background_view = findViewById(R.id.background_mid);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -93,6 +110,25 @@ public class MainActivity extends AppCompatActivity {
         if (gwochun == 1) {
             suport3.setVisibility(View.VISIBLE);
         }
+        if (LL == 1) {
+            setlittleBack(1);
+        }
+        if (TW == 1) {
+            setlittleBack(2);
+        }
+        if (CH == 1) {
+            setlittleBack(3);
+        }
+        if (road == 1) {
+            setlittleBack(4);
+        }
+        if (Inf == 1) {
+            setlittleBack(5);
+        }
+        if (cute == 1) {
+            setlittleBack(6);
+        }
+        setBack(background);
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -138,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 2:
-                                    if (exp > 2000) {
+                                    if (exp > 5000) {
                                         level = 3;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -147,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 3:
-                                    if (exp > 3000) {
+                                    if (exp > 20000) {
                                         level = 4;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -156,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 4:
-                                    if (exp > 4000) {
+                                    if (exp > 100000) {
                                         level = 5;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -164,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                                         lunchSecondAct(3);
                                     }
                                 case 5:
-                                    if (exp > 5000) {
+                                    if (exp > 1000000) {
                                         level = 6;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -172,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 6:
-                                    if (exp > 6000) {
+                                    if (exp > 3000000) {
                                         level = 7;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -180,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 7:
-                                    if (exp > 7000) {
+                                    if (exp > 10000000) {
                                         level = 8;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -188,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 8:
-                                    if (exp > 8000) {
+                                    if (exp > 50000000) {
                                         level = 9;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -196,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 9:
-                                    if (exp > 9000) {
+                                    if (exp > 150000000) {
                                         level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
@@ -216,6 +252,7 @@ public class MainActivity extends AppCompatActivity {
     public void update(int i) {
         Socre_text.setText("聲勢 : " + Integer.toString(i));
         score_persec.setText("+"+Integer.toString(score_rate) + "/單位時間");
+        exp_view.setText("經驗值"+Integer.toString(exp));
     }
 
     public void updateMove(int i) {
@@ -223,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
             ///國瑜///
             image.setImageResource(R.drawable.hanzon);
             ///冰冰///
+            suport1.setImageResource(R.drawable.whitecold);
             ///英文///
             suport2.setImageResource(R.drawable.inwen);
             ///國昌///
@@ -231,6 +269,7 @@ public class MainActivity extends AppCompatActivity {
             ///國瑜///
             image.setImageResource(R.drawable.hanzon2);
             ///冰冰///
+            suport1.setImageResource(R.drawable.whitecold2);
             ///英文///
             suport2.setImageResource(R.drawable.inwen2);
             ///國昌///
@@ -259,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("Road",road);
         editor.putInt("Inf",Inf);
         editor.putInt("cute",cute);
+        editor.putInt("background",background);
         }
     /////讀檔//////
     public void loading(SharedPreferences settings){
@@ -285,6 +325,7 @@ public class MainActivity extends AppCompatActivity {
         road = settings.getInt("Road",road);
         Inf = settings.getInt("Inf",Inf);
         cute = settings.getInt("cute",cute);
+        background = settings.getInt("background ",background);
     }
     /////遭遇事件/////
     public void lunchSecondAct(int i){
@@ -315,22 +356,42 @@ public class MainActivity extends AppCompatActivity {
         myAlertBuilder.show();
         // Create and show the AlertDialog.
     }
-    ///////韓語綠通知/////////////////////////////////
-    public void hanalert(int i){
-        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
-        ////SetTitleAndMessage////
-        myAlertBuilder.setTitle("韓語錄");
-        myAlertBuilder.setMessage("您獲得新的韓語綠");
-        // Add the dialog buttons.
-        myAlertBuilder.setPositiveButton("OK", new
-                DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User clicked OK button.
-                    }
-                });
-        //
-        myAlertBuilder.show();
-        // Create and show the AlertDialog.
+    ///////////////設置背景////////////////////
+    public void setBack(int i){
+        switch (i){
+            case 1:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.taipei));
+                break;
+            case 2:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.kaoshion));
+                break;
+            case 3:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.earth));
+                break;
+
+        }
+    }
+    public void setlittleBack(int i) {
+        switch (i) {
+            case 1:
+                littleback1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                littleback2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                littleback3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                littleback4.setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                littleback5.setVisibility(View.VISIBLE);
+                break;
+            case 6:
+                littleback6.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 
 }

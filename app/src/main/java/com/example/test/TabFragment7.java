@@ -14,6 +14,7 @@ public class TabFragment7 extends Fragment {
     private View v;
     private Button button1;
     private Button button2;
+    private Button button3;
 
     public static TabFragment7 newInstance() {
         TabFragment7 f = new TabFragment7();
@@ -72,6 +73,23 @@ public class TabFragment7 extends Fragment {
                 xxx.road =0;
                 xxx.Inf = 0;
                 xxx.cute = 0;
+                xxx.setBack(1);
+                xxx.background=1;
+                xxx.littleback1.setVisibility(View.INVISIBLE);
+                xxx.littleback2.setVisibility(View.INVISIBLE);
+                xxx.littleback3.setVisibility(View.INVISIBLE);
+                xxx.littleback4.setVisibility(View.INVISIBLE);
+                xxx.littleback5.setVisibility(View.INVISIBLE);
+                xxx.littleback6.setVisibility(View.INVISIBLE);
+            }
+        });
+        button3 = v.findViewById(R.id.onemili);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity xxx = (MainActivity) getActivity();
+                xxx.score = xxx.score+10000;
+                xxx.exp = xxx.exp+10000;
             }
         });
         return v;

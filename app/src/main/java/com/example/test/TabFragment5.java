@@ -94,6 +94,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 40000;
                     xxx.LL = 1;
                     button_LL.setEnabled(false);
+                    xxx.setlittleBack(1);
                 }
             }
         });
@@ -106,6 +107,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 10000;
                     xxx.TW = 1;
                     button_TW.setEnabled(false);
+                    xxx.setlittleBack(2);
                 }
             }
         });
@@ -118,6 +120,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 30000;
                     xxx.CH = 1;
                     button_CH.setEnabled(false);
+                    xxx.setlittleBack(3);
                 }
             }
         });
@@ -130,6 +133,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 50000;
                     xxx.road = 1;
                     button_Road.setEnabled(false);
+                    xxx.setlittleBack(4);
                 }
             }
         });
@@ -142,6 +146,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 100000;
                     xxx.Inf = 1;
                     button_Inf.setEnabled(false);
+                    xxx.setlittleBack(5);
                 }
             }
         });
@@ -154,6 +159,7 @@ public class TabFragment5 extends Fragment {
                     xxx.score -= 8000;
                     xxx.cute = 1;
                     button_cute.setEnabled(false);
+                    xxx.setlittleBack(6);
                 }
             }
         });

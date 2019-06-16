@@ -15,7 +15,7 @@ public class Main3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
         text1say = findViewById(R.id.text1say);
         Intent intent = getIntent();
         ///////////////判斷要做什麼動作的變數///////////////////

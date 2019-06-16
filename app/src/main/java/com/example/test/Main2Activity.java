@@ -34,7 +34,7 @@ public class Main2Activity extends AppCompatActivity {
             case"0":
                 title.setText("新聞媒體抹黑");
                 text1say.setText("過去曾是流氓\n在議會裡動粗\n還花天酒地\n對這樣的不實指控\n你怎麼回應?");
-                image.setImageResource(R.drawable.bannon);
+                image.setImageResource(R.drawable.media);
                 button1.setText("欺騙大眾說沒有");
                 button2.setText("承認過錯");
                 break;

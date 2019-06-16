@@ -101,6 +101,8 @@ public class TabFragment6 extends Fragment {
                     xxx.job = "職位: 高雄市長";
                     xxx.job_text.setText(xxx.job);
                     xxx.hanalert(2);
+                    xxx.setBack(2);
+                    xxx.background=2;
                     button_KH.setEnabled(false);
                 }
             }
@@ -141,6 +143,8 @@ public class TabFragment6 extends Fragment {
                 if (xxx.job=="職位: 中國總書記" && xxx.score>=80000 && xxx.level>=8 && xxx.road==1) {
                     xxx.job = "職位: 地球領導人";
                     xxx.job_text.setText(xxx.job);
+                    xxx.setBack(3);
+                    xxx.background=3;
                     button_earth.setEnabled(false);
                 }
             }

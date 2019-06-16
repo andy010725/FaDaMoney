@@ -11,17 +11,19 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/button2"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
             android:layout_weight="1"
             android:text="Score : 0 "
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +32,12 @@
         <TextView
             android:id="@+id/score_persec"
             android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:text="+1/單位時間 "
+            android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/score" />
@@ -44,8 +47,12 @@
             android:id="@+id/textjob"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:text="職位: 北農總經理"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,9 +64,19 @@
             android:layout_height="19dp"
             android:layout_weight="1"
             android:text="等級: 1"
+            android:textColor="@android:color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textjob"
             app:layout_constraintTop_toBottomOf="@+id/textjob" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="經驗值 : 0"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/score_persec"
+            app:layout_constraintTop_toBottomOf="@+id/score_persec" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -116,7 +133,7 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/bird2" />
+            app:srcCompat="@drawable/aban" />
 
         <ImageView
             android:id="@+id/suport2"
@@ -135,7 +152,7 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/bird2" />
+            app:srcCompat="@drawable/whitecold" />
         <TextView
             android:id="@+id/special"
             android:layout_width="match_parent"
@@ -143,7 +160,62 @@
             android:background="@drawable/special1"
             android:visibility="invisible"
             />
-        />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="56dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/rurofen" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="52dp"
+            android:layout_height="76dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:srcCompat="@drawable/taiwan" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView12"
+            app:srcCompat="@drawable/china" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="58dp"
+            android:layout_height="55dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView15"
+            app:srcCompat="@drawable/onedieoneroad" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="56dp"
+            android:layout_height="66dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView18"
+            app:srcCompat="@drawable/infinaty" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="53dp"
+            android:layout_height="69dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/bird" />
     </android.support.constraint.ConstraintLayout>
 
     <fragment
