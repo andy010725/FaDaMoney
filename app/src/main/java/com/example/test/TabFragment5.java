@@ -90,8 +90,8 @@ public class TabFragment5 extends Fragment {
         button_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 40000) {
-                    xxx.score -= 40000;
+                if (xxx.score >= 50) {
+                    xxx.score -= 50;
                     xxx.LL = 1;
                     button_LL.setEnabled(false);
                     xxx.setlittleBack(1);
@@ -103,8 +103,8 @@ public class TabFragment5 extends Fragment {
         button_TW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 10000) {
-                    xxx.score -= 10000;
+                if (xxx.score >= 0) {
+                    xxx.score -= 0;
                     xxx.TW = 1;
                     button_TW.setEnabled(false);
                     xxx.setlittleBack(2);
@@ -116,8 +116,8 @@ public class TabFragment5 extends Fragment {
         button_CH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 30000) {
-                    xxx.score -= 30000;
+                if (xxx.score >= 646464) {
+                    xxx.score -= 646464;
                     xxx.CH = 1;
                     button_CH.setEnabled(false);
                     xxx.setlittleBack(3);
@@ -129,8 +129,8 @@ public class TabFragment5 extends Fragment {
         button_Road.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 50000) {
-                    xxx.score -= 50000;
+                if (xxx.score >= 1000000) {
+                    xxx.score -= 1000000;
                     xxx.road = 1;
                     button_Road.setEnabled(false);
                     xxx.setlittleBack(4);
@@ -142,8 +142,8 @@ public class TabFragment5 extends Fragment {
         button_Inf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 100000) {
-                    xxx.score -= 100000;
+                if (xxx.score >= 9999999) {
+                    xxx.score -= 9999999;
                     xxx.Inf = 1;
                     button_Inf.setEnabled(false);
                     xxx.setlittleBack(5);
@@ -155,8 +155,8 @@ public class TabFragment5 extends Fragment {
         button_cute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score >= 8000) {
-                    xxx.score -= 8000;
+                if (xxx.score >= 10) {
+                    xxx.score -= 10;
                     xxx.cute = 1;
                     button_cute.setEnabled(false);
                     xxx.setlittleBack(6);

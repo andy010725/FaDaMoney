@@ -16,18 +16,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.io.InputStream;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.android";
+    public static final String EXTRA_SCORE =
+            "com.example.android_score";
+    public static final int TEXT_REQUEST = 1;
     private Long startTime;
     private Handler handler = new Handler();
     public int score = 0;
+    public int score_from_2 = 0;
     public int exp = 0;
     public int time = 0;
     public int score_rate = 1; // 跳錢的倍率
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     TextView special;
     TextView background_view;
     TextView exp_view;
+    ProgressBar maxexp_view;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
-//////////////////////////////////////
+    //////////////////////////////////////
     public int LL = 0;
     public int TW = 0;
     public int CH = 0;
@@ -93,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         littleback6 = findViewById(R.id.imageView18);
         exp_view =findViewById(R.id.textView16);
         background_view = findViewById(R.id.background_mid);
+        maxexp_view = findViewById(R.id.progressBar2);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -101,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         textlevel.setText("等級: " + Integer.toString(level));
         update(score);
         job_text.setText(job);
+        maxexp_view.setMax(1000);
+        //maxexp_view.setText("升等所需經驗: "+ "1000");
         if (binbin == 1) {
             suport1.setVisibility(View.VISIBLE);
         }
@@ -158,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                             text_saying.setVisibility(View.INVISIBLE);
                             special.setVisibility(View.INVISIBLE);
 
+                            maxexp_view.setProgress(exp);
                             ///////////判斷升等////////////////
                             Log.v("level", Integer.toString(level));
                             Log.v("bin",Integer.toString(binbin));
@@ -167,6 +174,9 @@ public class MainActivity extends AppCompatActivity {
                                         level = 2;
                                         levelpoint += 1;
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        maxexp_view.setMin(1000);
+                                        maxexp_view.setMax(10000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "10000");
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
@@ -174,53 +184,71 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     break;
                                 case 2:
-                                    if (exp > 5000) {
+                                    if (exp > 10000) {
                                         level = 3;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(10000);
+                                        maxexp_view.setMax(60000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "60000");
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                        lunchSecondAct(0);
                                     }
                                     break;
                                 case 3:
-                                    if (exp > 20000) {
+                                    if (exp > 60000) {
                                         level = 4;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(60000);
+                                        maxexp_view.setMax(600000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "600000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(2);
                                     }
                                     break;
                                 case 4:
-                                    if (exp > 100000) {
+                                    if (exp > 600000) {
                                         level = 5;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(600000);
+                                        maxexp_view.setMax(3000000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "3000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                        lunchSecondAct(3);
                                     }
                                 case 5:
-                                    if (exp > 1000000) {
+                                    if (exp > 3000000) {
                                         level = 6;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(3000000);
+                                        maxexp_view.setMax(8000000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "8000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(3);
                                     }
                                     break;
                                 case 6:
-                                    if (exp > 3000000) {
+                                    if (exp > 8000000) {
                                         level = 7;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(8000000);
+                                        maxexp_view.setMax(20000000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "20000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
                                 case 7:
-                                    if (exp > 10000000) {
+                                    if (exp > 20000000) {
                                         level = 8;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(20000000);
+                                        maxexp_view.setMax(50000000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "50000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(0);
                                     }
                                     break;
                                 case 8:
@@ -228,14 +256,18 @@ public class MainActivity extends AppCompatActivity {
                                         level = 9;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        maxexp_view.setMin(50000000);
+                                        maxexp_view.setMax(100000000);
+                                        //maxexp_view.setText("升等所需經驗: "+ "150000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
                                 case 9:
-                                    if (exp > 150000000) {
+                                    if (exp > 100000000) {
                                         level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
+                                        //maxexp_view.setText("MAX");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
@@ -250,9 +282,9 @@ public class MainActivity extends AppCompatActivity {
 
     /////////////////以上是mainActivity/////////////////////////////
     public void update(int i) {
-        Socre_text.setText("聲勢 : " + Integer.toString(i));
+        Socre_text.setText("聲望 : " + Integer.toString(i));
         score_persec.setText("+"+Integer.toString(score_rate) + "/單位時間");
-        exp_view.setText("經驗值"+Integer.toString(exp));
+        //exp_view.setText("經驗值"+Integer.toString(exp));
     }
 
     public void updateMove(int i) {
@@ -299,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("Inf",Inf);
         editor.putInt("cute",cute);
         editor.putInt("background",background);
-        }
+    }
     /////讀檔//////
     public void loading(SharedPreferences settings){
         score = settings.getInt("score", score);
@@ -331,11 +363,30 @@ public class MainActivity extends AppCompatActivity {
     public void lunchSecondAct(int i){
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
-        startActivity(intent);
+        intent.putExtra(EXTRA_SCORE, score);
+        startActivityForResult(intent,TEXT_REQUEST);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.v("result_2", Integer.toString(resultCode));
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+
+                score_from_2 = data.getIntExtra(Main2Activity.EXTRA_REPLY, 0);
+                score = score+score_from_2;
+            }
+        }
     }
     ////韓語錄劇情/////
     public void lunchthirdAct(int i){
         Intent intent = new Intent(this, Main3Activity.class);
+        intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
+        startActivity(intent);
+    }
+    ///////破關///////
+    public void lunchfinalAct(int i){
+        Intent intent = new Intent(this, Main4Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
         startActivity(intent);
     }
@@ -352,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
                         // User clicked OK button.
                     }
                 });
-       //
+        //
         myAlertBuilder.show();
         // Create and show the AlertDialog.
     }
@@ -392,6 +443,43 @@ public class MainActivity extends AppCompatActivity {
                 littleback6.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    ////////////////////////////////
+    public void jobalert(int i){
+        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
+        ////SetTitleAndMessage////
+        switch (i){
+            case 0:
+                myAlertBuilder.setTitle("恭喜您成為高雄市長");
+                myAlertBuilder.setMessage("獲得發大財能力增加1萬");
+                break;
+            case 1:
+                myAlertBuilder.setTitle("恭喜您台灣總統成為");
+                myAlertBuilder.setMessage("獲得每秒增加聲望量1萬");
+                break;
+            case 2:
+                myAlertBuilder.setTitle("恭喜您成為中國總書記");
+                myAlertBuilder.setMessage("獲得發大財能力增加10萬");
+                break;
+            case 3:
+                myAlertBuilder.setTitle("恭喜您地球領導人成為");
+                myAlertBuilder.setMessage("獲得每秒增加聲望量10萬");
+                break;
+            case 4:
+                myAlertBuilder.setTitle("恭喜您銀河系霸主成為");
+                myAlertBuilder.setMessage("獲得發大財能力增加100萬");
+        }
+        // Add the dialog buttons.
+        myAlertBuilder.setPositiveButton("OK", new
+                DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // User clicked OK button.
+                    }
+                });
+        //
+        myAlertBuilder.show();
+        // Create and show the AlertDialog.
     }
 
 }

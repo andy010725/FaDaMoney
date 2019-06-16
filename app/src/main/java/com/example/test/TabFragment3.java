@@ -72,7 +72,7 @@ public class TabFragment3 extends Fragment {
                     button.setEnabled(false);
                     xxx.suport1.setVisibility(View.VISIBLE);
                     /////////////////////////////////////////////////////
-                    xxx.score_rate +=1000;
+                    xxx.score_rate +=3000;
                 }
             }
         });
@@ -86,7 +86,7 @@ public class TabFragment3 extends Fragment {
                     button2.setEnabled(false);
                     xxx.suport2.setVisibility(View.VISIBLE);
                     //////////////////////////////////////////////////////////////
-                    xxx.fadamoney +=10000;
+                    xxx.fadamoney +=20000;
                 }
             }
         });
@@ -94,13 +94,13 @@ public class TabFragment3 extends Fragment {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score > 9999999) {
-                    xxx.score = xxx.score - 9999999;
+                if (xxx.score > 999999) {
+                    xxx.score = xxx.score - 999999;
                     xxx.gwochun = 1;
                     button3.setEnabled(false);
                     xxx.suport3.setVisibility(View.VISIBLE);
                     /////////////////////////////////////////////////////////
-                    xxx.fadamoney -= 200;
+                    xxx.sec -= 200;
                 }
             }
         });

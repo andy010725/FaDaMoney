@@ -27,7 +27,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="3千萬聲望+10等"
+                android:text="9999999+10等+無限手套"
                 app:layout_constraintStart_toEndOf="@+id/textView12"
                 app:layout_constraintTop_toTopOf="@+id/textView12" />
 
@@ -155,7 +155,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="10萬聲望+2等+白冰冰"
+                android:text="6萬聲望+2等+白冰冰\n+滷肉飯礦泉水"
                 app:layout_constraintStart_toEndOf="@+id/textView_KHH"
                 app:layout_constraintTop_toTopOf="@+id/button" />
 
@@ -215,7 +215,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="50萬聲望+4等"
+                android:text="23萬聲望+4等+台灣價值"
                 app:layout_constraintStart_toEndOf="@+id/textView_TWper"
                 app:layout_constraintTop_toTopOf="@+id/textView_TWper" />
 
@@ -226,7 +226,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="300萬聲望+6等+蔡英文"
+                android:text="130萬+6等+蔡英文\n+五星旗"
                 app:layout_constraintStart_toEndOf="@+id/textView_CHper"
                 app:layout_constraintTop_toTopOf="@+id/textView_CHper" />
 
@@ -274,7 +274,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="1千萬聲望+8等"
+                android:text="4百萬聲望+8等+一帶一路"
                 app:layout_constraintStart_toEndOf="@+id/textView10"
                 app:layout_constraintTop_toTopOf="@+id/textView10" />
 

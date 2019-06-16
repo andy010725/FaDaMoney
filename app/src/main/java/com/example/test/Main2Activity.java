@@ -146,7 +146,7 @@ public class Main2Activity extends AppCompatActivity {
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score -= 40000;
+                        score += 40000;
                         plusalert(3);
                         replyIntent.putExtra(EXTRA_REPLY,score);
                         setResult(RESULT_OK,replyIntent);
@@ -162,7 +162,6 @@ public class Main2Activity extends AppCompatActivity {
         Intent replyIntent = new Intent();
         //String reply = "成功";
         score =9999;
-
         replyIntent.putExtra(EXTRA_REPLY, score);
         setResult(RESULT_OK,replyIntent);
         Log.v("result_1",Integer.toString(RESULT_OK));
@@ -177,17 +176,17 @@ public class Main2Activity extends AppCompatActivity {
         myAlertBuilder.setTitle("聲望提升");
         switch (i) {
             case 0 :
-            myAlertBuilder.setMessage("獲得一萬聲望");
-            break;
+                myAlertBuilder.setMessage("獲得一萬聲望");
+                break;
             case 1 :
-            myAlertBuilder.setMessage("獲得兩萬聲望");
-            break;
+                myAlertBuilder.setMessage("獲得兩萬聲望");
+                break;
             case  2:
-            myAlertBuilder.setMessage("獲得三萬聲望");
-            break;
+                myAlertBuilder.setMessage("獲得三萬聲望");
+                break;
             case  3:
-            myAlertBuilder.setMessage("獲得四萬聲望");
-            break;
+                myAlertBuilder.setMessage("獲得四萬聲望");
+                break;
         }
         // Add the dialog buttons.
         myAlertBuilder.setPositiveButton("OK", new

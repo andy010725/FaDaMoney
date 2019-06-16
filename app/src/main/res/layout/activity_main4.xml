@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorbackground"
-    tools:context=".Main3Activity">
+    tools:context=".Main4Activity">
 
     <TextView
         android:id="@+id/text1say"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/encounter1"
-        android:textColor="@android:color/black"
         android:gravity="center"
+        android:text="在經歷重重危機後\n你終於征服了宇宙\n所有人都變得快樂\n創造了一個無痛的世界\n這樣的美好還會繼續下去\n\n\n\n\n\n\n製作名單:\n彭彥筑\n宋泉儒\n王成允\n\n\n\n\n\n\n2019/6 NYA_PASS團隊版權所有"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texttitle" />
@@ -27,23 +27,23 @@
         android:id="@+id/texttitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/title_encounter1"
+        android:layout_marginTop="32dp"
+        android:text="征服宇宙"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button4"
-        android:layout_width="43dp"
+        android:layout_width="99dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="X"
+        android:layout_marginTop="32dp"
         android:onClick="backtomain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="繼續發大財"
+        app:layout_constraintEnd_toEndOf="@+id/text1say"
+        app:layout_constraintStart_toStartOf="@+id/text1say"
+        app:layout_constraintTop_toBottomOf="@+id/text1say" />
 </android.support.constraint.ConstraintLayout>

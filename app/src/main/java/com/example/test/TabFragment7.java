@@ -88,8 +88,8 @@ public class TabFragment7 extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity xxx = (MainActivity) getActivity();
-                xxx.score = xxx.score+10000;
-                xxx.exp = xxx.exp+10000;
+                xxx.score = xxx.score+100000;
+                xxx.exp = xxx.exp+100000;
             }
         });
         return v;

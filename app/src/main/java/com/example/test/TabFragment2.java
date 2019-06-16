@@ -86,13 +86,13 @@ public class TabFragment2 extends Fragment {
                 switch (xxx.exaggerate) {
 
                     case 2:
-                        xxx.score_rate +=99;
+                        xxx.score_rate +=299;
                         break;
                     case 3:
-                        xxx.score_rate += 900;
+                        xxx.score_rate += 4900;
                         break;
                     case 4:
-                        xxx.score_rate += 4000;
+                        xxx.score_rate += 44000;
                         break;
                 }
 
@@ -126,10 +126,10 @@ public class TabFragment2 extends Fragment {
                         xxx.fadamoney += 400;
                         break;
                     case 3:
-                        xxx.fadamoney +=500;
+                        xxx.fadamoney +=1200;
                         break;
                     case 4:
-                        xxx.fadamoney +=4000;
+                        xxx.fadamoney +=8000;
                         break;
                 }
 
@@ -160,13 +160,13 @@ public class TabFragment2 extends Fragment {
                 switch (xxx.charm) {
 
                     case 2:
-                        xxx.sec -=300;
+                        xxx.sec -=100;
                         break;
                     case 3:
-                        xxx.sec -=100;
+                        xxx.sec -=200;
                         break;
                     case 4:
-                        xxx.sec -=100;
+                        xxx.sec -=200;
                         break;
                 }
 

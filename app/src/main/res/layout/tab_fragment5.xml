@@ -37,11 +37,11 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="154dp"
-                android:layout_height="17dp"
+                android:layout_height="38dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="彈指間，生靈灰飛湮滅"
+                android:text="彈指間，生靈灰飛湮滅\n9999999聲望"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView12"
                 app:layout_constraintTop_toTopOf="@+id/textView12" />
@@ -49,11 +49,11 @@
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="154dp"
-                android:layout_height="17dp"
+                android:layout_height="42dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="被瘋狂搶購的人氣商品"
+                android:text="被瘋狂搶購的人氣商品\n10聲望"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView14"
                 app:layout_constraintTop_toTopOf="@+id/textView14" />
@@ -192,11 +192,11 @@
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="42dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="高雄市長必備"
+                android:text="高雄市長必備\n50聲望"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView_KHH"
                 app:layout_constraintTop_toTopOf="@+id/button" />
@@ -269,7 +269,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="受台灣人民愛戴"
+                android:text="受台灣人民愛戴\n自行充值(0聲望)"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView_TWper"
                 app:layout_constraintTop_toTopOf="@+id/textView_TWper" />
@@ -281,7 +281,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="厲害了我的國，中國或成最大贏家"
+                android:text="厲害了我的國，中國或成最大贏家\n646464聲望"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView_CHper"
                 app:layout_constraintTop_toTopOf="@+id/textView_CHper" />
@@ -328,11 +328,11 @@
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="114dp"
-                android:layout_height="17dp"
+                android:layout_height="37dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="世界跟著禿子走"
+                android:text="世界跟著禿子走\n100萬聲望"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/textView10"
                 app:layout_constraintTop_toTopOf="@+id/textView10" />
