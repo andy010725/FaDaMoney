@@ -77,6 +77,15 @@
             android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/score_persec"
             app:layout_constraintTop_toBottomOf="@+id/score_persec" />
+
+        <TextView
+            android:id="@+id/textView_maxexp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintStart_toEndOf="@+id/textView16" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
