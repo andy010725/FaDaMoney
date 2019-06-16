@@ -39,6 +39,10 @@ public class TabFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab_fragment1, container, false);
 
+        MainActivity xxx = (MainActivity) getActivity();
+
+
+
 
 
         /////能力值///////
