@@ -123,9 +123,10 @@
             android:layout_width="143dp"
             android:layout_height="168dp"
             android:visibility="invisible"
+            android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/bird" />
+            app:srcCompat="@drawable/inwen" />
 
         <ImageView
             android:id="@+id/suport1"

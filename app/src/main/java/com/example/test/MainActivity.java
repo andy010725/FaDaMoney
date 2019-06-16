@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
+                                        hanalert(1);
                                     }
                                     break;
                                 case 2:
@@ -145,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(0);
                                     }
                                     break;
                                 case 3:
@@ -153,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(2);
                                     }
                                     break;
                                 case 4:
@@ -161,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(3);
                                     }
                                 case 5:
                                     if (exp > 5000) {
@@ -223,13 +229,17 @@ public class MainActivity extends AppCompatActivity {
             image.setImageResource(R.drawable.hanzon);
             ///冰冰///
             ///英文///
+            suport2.setImageResource(R.drawable.inwen);
             ///國昌///
+            suport3.setImageResource(R.drawable.aban);
         } else {
             ///國瑜///
             image.setImageResource(R.drawable.hanzon2);
             ///冰冰///
             ///英文///
+            suport2.setImageResource(R.drawable.inwen2);
             ///國昌///
+            suport3.setImageResource(R.drawable.aban2);
         }
     }
     /////存檔/////
@@ -307,6 +317,23 @@ public class MainActivity extends AppCompatActivity {
                 background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.earth));
                 break;
         }
+    }
+    ///////韓語綠通知/////////////////////////////////
+    public void hanalert(int i){
+        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
+        ////SetTitleAndMessage////
+        myAlertBuilder.setTitle("韓語錄");
+        myAlertBuilder.setMessage("您獲得新的韓語綠");
+        // Add the dialog buttons.
+        myAlertBuilder.setPositiveButton("OK", new
+                DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // User clicked OK button.
+                    }
+                });
+        //
+        myAlertBuilder.show();
+        // Create and show the AlertDialog.
     }
 
 }

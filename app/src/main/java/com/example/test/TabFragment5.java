@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+
 public class TabFragment5 extends Fragment {
 
     private View v;
@@ -50,34 +52,34 @@ public class TabFragment5 extends Fragment {
         final MainActivity xxx = (MainActivity) getActivity();
         //////////////////////////////////////////////////////////////////////////////////////////////
         /////初始設定/////
-        if (xxx.LL==1){
+        if (xxx.LL == 1) {
             button_LL.setEnabled(false);
-        }else {
+        } else {
             button_LL.setEnabled(true);
         }
-        if (xxx.TW==1){
+        if (xxx.TW == 1) {
             button_TW.setEnabled(false);
-        }else {
+        } else {
             button_TW.setEnabled(true);
         }
-        if (xxx.CH==1){
+        if (xxx.CH == 1) {
             button_CH.setEnabled(false);
-        }else {
+        } else {
             button_CH.setEnabled(true);
         }
-        if (xxx.road==1){
+        if (xxx.road == 1) {
             button_Road.setEnabled(false);
-        }else {
+        } else {
             button_Road.setEnabled(true);
         }
-        if (xxx.Inf==1){
+        if (xxx.Inf == 1) {
             button_Inf.setEnabled(false);
-        }else {
+        } else {
             button_Inf.setEnabled(true);
         }
-        if(xxx.cute==1){
+        if (xxx.cute == 1) {
             button_cute.setEnabled(false);
-        }else {
+        } else {
             button_cute.setEnabled(true);
         }
         /////////////////////////////////////////////////
@@ -88,7 +90,7 @@ public class TabFragment5 extends Fragment {
         button_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(xxx.score>=4000) {
+                if (xxx.score >= 40000) {
                     xxx.score -= 40000;
                     xxx.LL = 1;
                     button_LL.setEnabled(false);
@@ -100,7 +102,7 @@ public class TabFragment5 extends Fragment {
         button_TW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score>=10000) {
+                if (xxx.score >= 10000) {
                     xxx.score -= 10000;
                     xxx.TW = 1;
                     button_TW.setEnabled(false);
@@ -112,8 +114,8 @@ public class TabFragment5 extends Fragment {
         button_CH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score>=30000) {
-                    xxx.score -=30000;
+                if (xxx.score >= 30000) {
+                    xxx.score -= 30000;
                     xxx.CH = 1;
                     button_CH.setEnabled(false);
                 }
@@ -124,8 +126,8 @@ public class TabFragment5 extends Fragment {
         button_Road.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score>=50000){
-                    xxx.score-=50000;
+                if (xxx.score >= 50000) {
+                    xxx.score -= 50000;
                     xxx.road = 1;
                     button_Road.setEnabled(false);
                 }
@@ -136,8 +138,8 @@ public class TabFragment5 extends Fragment {
         button_Inf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score>= 100000){
-                    xxx.score-=100000;
+                if (xxx.score >= 100000) {
+                    xxx.score -= 100000;
                     xxx.Inf = 1;
                     button_Inf.setEnabled(false);
                 }
@@ -148,8 +150,8 @@ public class TabFragment5 extends Fragment {
         button_cute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (xxx.score>=8000){
-                    xxx.score-=8000;
+                if (xxx.score >= 8000) {
+                    xxx.score -= 8000;
                     xxx.cute = 1;
                     button_cute.setEnabled(false);
                 }
