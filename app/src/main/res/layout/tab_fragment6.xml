@@ -38,7 +38,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/election"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -49,7 +49,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/election"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -60,7 +60,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/election"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -71,7 +71,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/election"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
@@ -237,7 +237,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/election"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
