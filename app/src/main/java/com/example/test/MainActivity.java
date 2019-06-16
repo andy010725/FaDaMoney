@@ -25,6 +25,9 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.android";
+    public static final String EXTRA_SCORE =
+            "com.example.android_score";
+    public static final int TEXT_REQUEST = 1;
     private Long startTime;
     private Handler handler = new Handler();
     public int score = 0;
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public int levelpoint = 0;
     public int fadamoney = 100;
     public int sec = 1000;
+    public int score_from_2 = 0;
     public String job = "職位: 無業";
     TextView Socre_text;
     TextView job_text;
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
-//////////////////////////////////////
+    //////////////////////////////////////
     public int LL = 0;
     public int TW = 0;
     public int CH = 0;
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         if (gwochun == 1) {
             suport3.setVisibility(View.VISIBLE);
         }
+
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -124,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                             ///////////判斷升等////////////////
                             Log.v("level", Integer.toString(level));
-                            Log.v("bin",Integer.toString(binbin));
+                            Log.v("bin", Integer.toString(binbin));
                             switch (level) {
                                 case 1:
                                     if (exp > 1000) {
@@ -134,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
+
                                         hanalert(1);
                                     }
                                     break;
@@ -215,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
     /////////////////以上是mainActivity/////////////////////////////
     public void update(int i) {
         Socre_text.setText("聲勢 : " + Integer.toString(i));
-        score_persec.setText("+"+Integer.toString(score_rate) + "/單位時間");
+        score_persec.setText("+" + Integer.toString(score_rate) + "/單位時間");
     }
 
     public void updateMove(int i) {
@@ -237,8 +243,9 @@ public class MainActivity extends AppCompatActivity {
             suport3.setImageResource(R.drawable.aban2);
         }
     }
+
     /////存檔/////
-    public void saveing(SharedPreferences.Editor editor){
+    public void saveing(SharedPreferences.Editor editor) {
         editor.putInt("score", score).commit();
         editor.putInt("exp", exp).commit();
         editor.putInt("sec", sec);
@@ -251,17 +258,18 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("charm", charm).commit();
         editor.putInt("fadamoney", fadamoney);
         editor.putInt("binbin", binbin);
-        editor.putInt("inwen",inwen );
-        editor.putInt("gwochun",gwochun );
-        editor.putInt("LL",LL);
-        editor.putInt("TW",TW);
-        editor.putInt("CH",CH);
-        editor.putInt("Road",road);
-        editor.putInt("Inf",Inf);
-        editor.putInt("cute",cute);
-        }
+        editor.putInt("inwen", inwen);
+        editor.putInt("gwochun", gwochun);
+        editor.putInt("LL", LL);
+        editor.putInt("TW", TW);
+        editor.putInt("CH", CH);
+        editor.putInt("Road", road);
+        editor.putInt("Inf", Inf);
+        editor.putInt("cute", cute);
+    }
+
     /////讀檔//////
-    public void loading(SharedPreferences settings){
+    public void loading(SharedPreferences settings) {
         score = settings.getInt("score", score);
         score_rate = settings.getInt("score_rate", score_rate);
         level = settings.getInt("level", level);
@@ -275,48 +283,48 @@ public class MainActivity extends AppCompatActivity {
         blame = settings.getInt("blame", blame);
         charm = settings.getInt("charm", charm);
         ///////站台/////////////
-        binbin = settings.getInt("binbin",binbin );
-        inwen= settings.getInt("inwen",inwen );
-        gwochun= settings.getInt("gwochun",gwochun );
+        binbin = settings.getInt("binbin", binbin);
+        inwen = settings.getInt("inwen", inwen);
+        gwochun = settings.getInt("gwochun", gwochun);
         ////////道具/////////
-        LL = settings.getInt("LL",LL);
-        TW = settings.getInt("TW",TW);
-        CH = settings.getInt("CH",CH);
-        road = settings.getInt("Road",road);
-        Inf = settings.getInt("Inf",Inf);
-        cute = settings.getInt("cute",cute);
+        LL = settings.getInt("LL", LL);
+        TW = settings.getInt("TW", TW);
+        CH = settings.getInt("CH", CH);
+        road = settings.getInt("Road", road);
+        Inf = settings.getInt("Inf", Inf);
+        cute = settings.getInt("cute", cute);
     }
+
     /////遭遇事件/////
-    public void lunchSecondAct(int i){
+    public void lunchSecondAct(int i) {
         Intent intent = new Intent(this, Main2Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
-        startActivity(intent);
+        intent.putExtra(EXTRA_SCORE, score);
+        startActivityForResult(intent,TEXT_REQUEST);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.v("result_2", Integer.toString(resultCode));
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+
+                score_from_2 = data.getIntExtra(Main2Activity.EXTRA_REPLY, 0);
+                score = score+score_from_2;
+            }
+        }
+    }
+
     ////韓語錄劇情/////
-    public void lunchthirdAct(int i){
+    public void lunchthirdAct(int i) {
         Intent intent = new Intent(this, Main3Activity.class);
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
         startActivity(intent);
     }
+
     ///////韓語綠通知/////////////////////////////////
-    public void hanalert(int i){
-        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
-        ////SetTitleAndMessage////
-        myAlertBuilder.setTitle("韓語錄");
-        myAlertBuilder.setMessage("您獲得新的韓語綠");
-        // Add the dialog buttons.
-        myAlertBuilder.setPositiveButton("OK", new
-                DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User clicked OK button.
-                    }
-                });
-       //
-        myAlertBuilder.show();
-        // Create and show the AlertDialog.
-    }
-    ///////韓語綠通知/////////////////////////////////
-    public void hanalert(int i){
+    public void hanalert(int i) {
         AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
         ////SetTitleAndMessage////
         myAlertBuilder.setTitle("韓語錄");
@@ -332,5 +340,6 @@ public class MainActivity extends AppCompatActivity {
         myAlertBuilder.show();
         // Create and show the AlertDialog.
     }
+
 
 }
