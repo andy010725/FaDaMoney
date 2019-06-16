@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         textlevel.setText("等級: " + Integer.toString(level));
         update(score);
         job_text.setText(job);
+        maxexp_view.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
         maxexp_view.setMax(1000);
         //maxexp_view.setText("升等所需經驗: "+ "1000");
         if (binbin == 1) {
