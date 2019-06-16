@@ -50,21 +50,27 @@ public class TabFragment4 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                xxx.lunchthirdAct(1);/////////////文本1///////////
+                if (xxx.job == "職位: 北農總經理"||xxx.job=="職位: 高雄市長"||xxx.job=="職位: 台灣總統"||xxx.job=="職位: 中國總書記"||xxx.job=="職位: 地球領導人"||xxx.job== "職位: 銀河系霸主") {
+                    xxx.lunchthirdAct(1);/////////////文本1///////////
+                }
             }
         });
         ////英文////
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                xxx.lunchthirdAct(2);/////////////文本2///////////
+                if (xxx.job=="職位: 高雄市長"||xxx.job=="職位: 台灣總統"||xxx.job=="職位: 中國總書記"||xxx.job=="職位: 地球領導人"||xxx.job== "職位: 銀河系霸主") {
+                    xxx.lunchthirdAct(2);/////////////文本2///////////
+                }
             }
         });
         ////國唱///
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                xxx.lunchthirdAct(3);///////////文本3//////////////
+                if(xxx.job=="職位: 台灣總統"||xxx.job=="職位: 中國總書記"||xxx.job=="職位: 地球領導人"||xxx.job== "職位: 銀河系霸主") {
+                    xxx.lunchthirdAct(3);///////////文本3//////////////
+                }
             }
         });
         return v;
@@ -74,5 +80,7 @@ public class TabFragment4 extends Fragment {
         transaction.replace(R.id.layout_fragment,f);
         transaction.commitNowAllowingStateLoss();
     }
+
+
 }
 

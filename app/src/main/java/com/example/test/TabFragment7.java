@@ -72,8 +72,6 @@ public class TabFragment7 extends Fragment {
                 xxx.road =0;
                 xxx.Inf = 0;
                 xxx.cute = 0;
-                xxx.background=1;
-                xxx.setBackground(1);
             }
         });
         return v;

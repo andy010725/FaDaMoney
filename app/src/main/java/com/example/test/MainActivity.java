@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +21,6 @@ import android.widget.TextView;
 import java.io.InputStream;
 import java.util.Timer;
 import java.util.TimerTask;
-
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public int levelpoint = 0;
     public int fadamoney = 100;
     public int sec = 1000;
-    public  int background = 1;
     public String job = "職位: 無業";
     TextView Socre_text;
     TextView job_text;
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView suport3;
     TextView textlevel;
     TextView special;
-    TextView background_view;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
-    //////////////////////////////////////
+//////////////////////////////////////
     public int LL = 0;
     public int TW = 0;
     public int CH = 0;
@@ -77,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         suport2 = findViewById(R.id.suport2);
         suport3 = findViewById(R.id.suport3);
         special = findViewById(R.id.special);
-        background_view = findViewById(R.id.background_mid);
         ////////////讀取儲存變數///////////////////
         SharedPreferences settings = getSharedPreferences("myPre", 0);
         final SharedPreferences.Editor editor = settings.edit();
@@ -95,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         if (gwochun == 1) {
             suport3.setVisibility(View.VISIBLE);
         }
-        setBackground(background);
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -137,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
+                                        hanalert(1);
                                     }
                                     break;
                                 case 2:
@@ -254,8 +252,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("Road",road);
         editor.putInt("Inf",Inf);
         editor.putInt("cute",cute);
-        editor.putInt("background",background);
-    }
+        }
     /////讀檔//////
     public void loading(SharedPreferences settings){
         score = settings.getInt("score", score);
@@ -281,7 +278,6 @@ public class MainActivity extends AppCompatActivity {
         road = settings.getInt("Road",road);
         Inf = settings.getInt("Inf",Inf);
         cute = settings.getInt("cute",cute);
-        background= settings.getInt("background",background);
     }
     /////遭遇事件/////
     public void lunchSecondAct(int i){
@@ -295,18 +291,22 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, Integer.toString(i));
         startActivity(intent);
     }
-    public void setBackground(int i){
-        switch (i){
-            case 1:
-                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.taipei));
-                break;
-            case 2:
-                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.kaoshion));
-                break;
-            case 3:
-                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.earth));
-                break;
-        }
+    ///////韓語綠通知/////////////////////////////////
+    public void hanalert(int i){
+        AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
+        ////SetTitleAndMessage////
+        myAlertBuilder.setTitle("韓語錄");
+        myAlertBuilder.setMessage("您獲得新的韓語綠");
+        // Add the dialog buttons.
+        myAlertBuilder.setPositiveButton("OK", new
+                DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // User clicked OK button.
+                    }
+                });
+       //
+        myAlertBuilder.show();
+        // Create and show the AlertDialog.
     }
 
 }

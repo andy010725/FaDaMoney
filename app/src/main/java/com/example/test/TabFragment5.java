@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 public class TabFragment5 extends Fragment {
 
     private View v;
@@ -48,7 +49,7 @@ public class TabFragment5 extends Fragment {
         button_cute = v.findViewById(R.id.button6);
         ////////////////////////////////////////////////////////////////////////////////////////////
         final MainActivity xxx = (MainActivity) getActivity();
-        //////////////////////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////////////////////////
         /////初始設定/////
         if (xxx.LL==1){
             button_LL.setEnabled(false);
@@ -88,14 +89,14 @@ public class TabFragment5 extends Fragment {
         button_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(xxx.score>=4000) {
+                if(xxx.score>=40000) {
                     xxx.score -= 40000;
                     xxx.LL = 1;
                     button_LL.setEnabled(false);
                 }
             }
         });
-        /////////////////////////////////台灣價值//////////////////////////////////////////////////
+         /////////////////////////////////台灣價值//////////////////////////////////////////////////
 
         button_TW.setOnClickListener(new View.OnClickListener() {
             @Override
