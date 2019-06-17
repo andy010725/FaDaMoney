@@ -63,6 +63,7 @@ public class TabFragment7 extends Fragment {
                 xxx.binbin = 0;
                 xxx.inwen = 0;
                 xxx.gwochun = 0;
+                xxx.gwenchun = 0;
                 xxx.suport1.setVisibility(View.INVISIBLE);
                 xxx.suport2.setVisibility(View.INVISIBLE);
                 xxx.suport3.setVisibility(View.INVISIBLE);
