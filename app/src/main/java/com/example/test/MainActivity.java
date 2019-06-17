@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
     public void saveing(SharedPreferences.Editor editor){
         editor.putInt("score", score).commit();
         editor.putInt("exp", exp).commit();
-        editor.putInt("sec", sec);
+        editor.putInt("sec", sec).commit();
         editor.putInt("score_rate", score_rate).commit();
         editor.putInt("level", level).commit();
         editor.putString("job", job).commit();
@@ -399,18 +399,18 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("exaggerate", exaggerate).commit();
         editor.putInt("blame", blame).commit();
         editor.putInt("charm", charm).commit();
-        editor.putInt("fadamoney", fadamoney);
-        editor.putInt("binbin", binbin);
-        editor.putInt("inwen",inwen );
-        editor.putInt("gwochun",gwochun );
-        editor.putInt("gwenchun",gwenchun );
-        editor.putInt("LL",LL);
-        editor.putInt("TW",TW);
-        editor.putInt("CH",CH);
-        editor.putInt("Road",road);
-        editor.putInt("Inf",Inf);
-        editor.putInt("cute",cute);
-        editor.putInt("background",background);
+        editor.putInt("fadamoney", fadamoney).commit();
+        editor.putInt("binbin", binbin).commit();
+        editor.putInt("inwen",inwen ).commit();
+        editor.putInt("gwochun",gwochun ).commit();
+        editor.putInt("gwenchun",gwenchun ).commit();
+        editor.putInt("LL",LL).commit();
+        editor.putInt("TW",TW).commit();
+        editor.putInt("CH",CH).commit();
+        editor.putInt("Road",road).commit();
+        editor.putInt("Inf",Inf).commit();
+        editor.putInt("cute",cute).commit();
+        editor.putInt("background",background).commit();
     }
     /////讀檔//////
     public void loading(SharedPreferences settings){
@@ -422,7 +422,7 @@ public class MainActivity extends AppCompatActivity {
         job = settings.getString("job", job);
         levelpoint = settings.getInt("levelpoint", levelpoint);
         fadamoney = settings.getInt("fadamoney", fadamoney);
-        background = settings.getInt("background ",background);
+        background = settings.getInt("background",background);
         /////能力值////////////
         exaggerate = settings.getInt("exaggerate", exaggerate);
         blame = settings.getInt("blame", blame);
