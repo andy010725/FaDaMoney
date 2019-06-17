@@ -1,6 +1,8 @@
 package com.example.test;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -32,6 +34,9 @@ public class TabFragment7 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab_fragment7, container, false);
+        SharedPreferences settings = this.getActivity().getSharedPreferences("myPre", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = settings.edit();
+
         button1 = v.findViewById(R.id.button_cancel);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +90,11 @@ public class TabFragment7 extends Fragment {
                 xxx.littleback6.setVisibility(View.INVISIBLE);
                 xxx.maxexp_view.setMin(0);
                 xxx.maxexp_view.setMax(1000);
+                ////////////////為了按鍵解鎖//////////////////
+                editor.putInt("level", xxx.level).commit();
+                editor.putInt("b_able1", 0).commit();
+                editor.putInt("b_able2", 0).commit();
+                editor.putInt("b_able3", 0).commit();
             }
         });
         button3 = v.findViewById(R.id.onemili);

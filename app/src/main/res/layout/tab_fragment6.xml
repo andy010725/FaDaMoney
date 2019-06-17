@@ -152,9 +152,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="6萬聲望+2等+白冰冰\n+滷肉飯礦泉水"
+                android:text="6萬聲望+3等+白冰冰\n+滷肉飯礦泉水"
                 app:layout_constraintStart_toEndOf="@+id/textView_KHH"
                 app:layout_constraintTop_toTopOf="@+id/button" />
 
@@ -268,10 +267,9 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="114dp"
-                android:layout_height="17dp"
+                android:layout_width="191dp"
+                android:layout_height="28dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
                 android:text="4百萬聲望+8等+一帶一路"
                 app:layout_constraintStart_toEndOf="@+id/textView10"

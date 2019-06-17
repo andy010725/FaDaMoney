@@ -47,8 +47,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/button"
-                android:text="韓語錄"
+                android:background="@drawable/button_disable"
+                android:text=""
+
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -83,8 +84,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/button"
-                android:text="道具"
+                android:background="@drawable/button_disable"
+                android:text=""
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -95,8 +96,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/button"
-                android:text="競選"
+                android:background="@drawable/button_disable"
+                android:text=""
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />

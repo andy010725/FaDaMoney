@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,7 @@ public class TabFragment1 extends Fragment {
     private Button button5;
     private Button button6;
     private Button button7;
+    public int level = 1;
 
 
     public static TabFragment1 newInstance() {
@@ -38,15 +40,45 @@ public class TabFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab_fragment1, container, false);
-
-        MainActivity xxx = (MainActivity) getActivity();
-
-
-
-
-
-        /////能力值///////
         button1 = v.findViewById(R.id.button_row11);
+        button2 = v.findViewById(R.id.button_row12);
+        button3 = v.findViewById(R.id.button_row13);
+        button4 = v.findViewById(R.id.button_row21);
+        button5 = v.findViewById(R.id.button_row31);
+        button6 = v.findViewById(R.id.button_row32);
+        MainActivity xxx = (MainActivity) getActivity();
+        SharedPreferences settings = this.getActivity().getSharedPreferences("myPre", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = settings.edit();
+        level = settings.getInt("level", level);
+
+        int b_able1 = 0;
+        int b_able2 = 0;
+        int b_able3 = 0;
+        /////load/////
+        b_able1 = settings.getInt("b_able1", b_able1);
+        b_able2 = settings.getInt("b_able2", b_able2);
+        b_able3 = settings.getInt("b_able3", b_able3);
+
+        if(level>=2){
+            button3.setText("韓語錄");
+            button3.setBackgroundDrawable(getResources().getDrawable(R.drawable.button));
+            b_able1 = 1;
+        }
+        if(level>=3){
+            button5.setText("道具");
+            button5.setBackgroundDrawable(getResources().getDrawable(R.drawable.button));
+            b_able2 = 1;
+        }
+        if(level>=4){
+            button6.setText("競選");
+            button6.setBackgroundDrawable(getResources().getDrawable(R.drawable.button));
+            b_able3 = 1;
+        }
+        //////存檔/////////
+        editor.putInt("b_able1", b_able1).commit();
+        editor.putInt("b_able2", b_able2).commit();
+        editor.putInt("b_able3", b_able3).commit();
+        /////能力值///////
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +87,6 @@ public class TabFragment1 extends Fragment {
             }
         });
         ///////站台///////
-        button2 = v.findViewById(R.id.button_row12);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,15 +94,15 @@ public class TabFragment1 extends Fragment {
             }
         });
         /////韓語錄////////
-        button3 = v.findViewById(R.id.button_row13);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changefragmet(TabFragment4.newInstance());
-            }
-        });
+        if(b_able1==1) {
+            button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changefragmet(TabFragment4.newInstance());
+                }
+            });
+        }
         /////發大財按鈕///////
-        button4 = v.findViewById(R.id.button_row21);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,21 +115,23 @@ public class TabFragment1 extends Fragment {
             }
         });
         ///////收購///////
-        button5 = v.findViewById(R.id.button_row31);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changefragmet(TabFragment5.newInstance());
-            }
-        });
+        if(b_able2==1) {
+            button5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changefragmet(TabFragment5.newInstance());
+                }
+            });
+        }
         ///////競選///////
-        button6 = v.findViewById(R.id.button_row32);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changefragmet(TabFragment6.newInstance());
-            }
-        });
+        if(b_able3==1) {
+            button6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    changefragmet(TabFragment6.newInstance());
+                }
+            });
+        }
         /////付費選項///////
         button7 = v.findViewById(R.id.button_row33);
         button7.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +141,7 @@ public class TabFragment1 extends Fragment {
             }
         });
         return v;
+        //////////////判斷等級/////////////
     }
 
     private void changefragmet(android.support.v4.app.Fragment f) {
@@ -123,4 +157,5 @@ public class TabFragment1 extends Fragment {
         button7.setEnabled(false);
 
     }
+
 }

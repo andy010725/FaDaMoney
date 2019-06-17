@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.annotation.SuppressLint;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +11,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
         update(score);
         job_text.setText(job);
+        setBack(background);
         ////經驗///
         maxexp_view.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
         maxexp_view.setMax(1000);
@@ -181,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
         if (cute == 1) {
             setlittleBack(6);
         }
-        setBack(background);
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -227,7 +228,14 @@ public class MainActivity extends AppCompatActivity {
                                         job = "職位: 北農總經理";
                                         job_text.setText(job);
                                         lunchSecondAct(1);
-                                        hanalert(1);
+                                        jobalert(13);
+                                        ///////////解鎖案件/////////////
+                                        FragmentManager fragMgr = getSupportFragmentManager();
+                                        TabFragment1 Frag1 = new TabFragment1();
+                                        editor.putInt("level", level).commit();
+                                        fragMgr.beginTransaction()
+                                                .replace(R.id.layout_fragment, Frag1)
+                                                .commit();
                                     }
                                     break;
                                 case 2:
@@ -239,6 +247,15 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(60000);
                                         //maxexp_view.setText("升等所需經驗: "+ "60000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        ///////////解鎖案件/////////////
+                                        FragmentManager fragMgr = getSupportFragmentManager();
+                                        TabFragment1 Frag1 = new TabFragment1();
+                                        editor.putInt("level", level).commit();
+                                        fragMgr.beginTransaction()
+                                                .replace(R.id.layout_fragment, Frag1)
+                                                .commit();
+                                        jobalert(5);
+
                                     }
                                     break;
                                 case 3:
@@ -251,6 +268,14 @@ public class MainActivity extends AppCompatActivity {
                                         //maxexp_view.setText("升等所需經驗: "+ "600000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(2);
+                                        ///////////解鎖案件/////////////
+                                        FragmentManager fragMgr = getSupportFragmentManager();
+                                        TabFragment1 Frag1 = new TabFragment1();
+                                        editor.putInt("level", level).commit();
+                                        fragMgr.beginTransaction()
+                                                .replace(R.id.layout_fragment, Frag1)
+                                                .commit();
+                                        jobalert(6);
                                     }
                                     break;
                                 case 4:
@@ -263,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                                         //maxexp_view.setText("升等所需經驗: "+ "3000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(3);
+                                        jobalert(7);
                                     }
                                 case 5:
                                     if (exp > 3000000) {
@@ -273,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(8000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "8000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        jobalert(8);
                                     }
                                     break;
                                 case 6:
@@ -285,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
                                         //maxexp_view.setText("升等所需經驗: "+ "20000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(0);
+                                        jobalert(9);
                                     }
                                     break;
                                 case 7:
@@ -297,6 +325,7 @@ public class MainActivity extends AppCompatActivity {
                                         //maxexp_view.setText("升等所需經驗: "+ "50000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                         lunchSecondAct(4);
+                                        jobalert(10);
                                     }
                                     break;
                                 case 8:
@@ -308,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(70000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "150000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        jobalert(11);
                                     }
                                     break;
                                 case 9:
@@ -317,6 +347,7 @@ public class MainActivity extends AppCompatActivity {
                                         editor.putInt("level", level).commit();
                                         //maxexp_view.setText("MAX");
                                         textlevel.setText("等級: MAX");
+                                        jobalert(12);
                                     }
                                     break;
                             }
@@ -391,6 +422,7 @@ public class MainActivity extends AppCompatActivity {
         job = settings.getString("job", job);
         levelpoint = settings.getInt("levelpoint", levelpoint);
         fadamoney = settings.getInt("fadamoney", fadamoney);
+        background = settings.getInt("background ",background);
         /////能力值////////////
         exaggerate = settings.getInt("exaggerate", exaggerate);
         blame = settings.getInt("blame", blame);
@@ -407,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
         road = settings.getInt("Road",road);
         Inf = settings.getInt("Inf",Inf);
         cute = settings.getInt("cute",cute);
-        background = settings.getInt("background ",background);
+
     }
     /////遭遇事件/////
     public void lunchSecondAct(int i){
@@ -452,8 +484,8 @@ public class MainActivity extends AppCompatActivity {
     public void hanalert(int i){
         AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
         ////SetTitleAndMessage////
-        myAlertBuilder.setTitle("韓語錄");
-        myAlertBuilder.setMessage("您獲得新的韓語綠");
+        myAlertBuilder.setTitle("獲得韓語綠");
+        myAlertBuilder.setMessage("-您獲得新的韓語綠");
         // Add the dialog buttons.
         myAlertBuilder.setPositiveButton("OK", new
                 DialogInterface.OnClickListener() {
@@ -535,6 +567,43 @@ public class MainActivity extends AppCompatActivity {
             case 4:
                 myAlertBuilder.setTitle("恭喜您銀河系霸主成為");
                 myAlertBuilder.setMessage("獲得發大財能力增加100萬");
+                break;
+            case 5:
+                myAlertBuilder.setTitle("等級3");
+                myAlertBuilder.setMessage("獲得技1能點\n解鎖道具按鍵功能");
+                break;
+            case 6:
+                myAlertBuilder.setTitle("等級4");
+                myAlertBuilder.setMessage("獲得技1能點\n解鎖競選功能\n已經可以競選高雄市長");
+                break;
+            case 7:
+                myAlertBuilder.setTitle("等級5");
+                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選台灣總統");
+                break;
+            case 8:
+                myAlertBuilder.setTitle("等級6");
+                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選中國總書記");
+                break;
+            case 9:
+                myAlertBuilder.setTitle("等級7");
+                myAlertBuilder.setMessage("獲得技1能點\n");
+                break;
+            case 10:
+                myAlertBuilder.setTitle("等級8");
+                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選中國總書記");
+                break;
+            case 11:
+                myAlertBuilder.setTitle("等級9");
+                myAlertBuilder.setMessage("獲得技1能點\n");
+                break;
+            case 12:
+                myAlertBuilder.setTitle("等級MAX");
+                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選宇宙霸主");
+                break;
+            case 13:
+                myAlertBuilder.setTitle("等級2");
+                myAlertBuilder.setMessage("獲得技1能點\n解鎖韓語錄\n您獲得新的韓語綠");
+                break;
         }
         // Add the dialog buttons.
         myAlertBuilder.setPositiveButton("OK", new

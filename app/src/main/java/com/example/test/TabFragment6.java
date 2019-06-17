@@ -99,7 +99,7 @@ public class TabFragment6 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(xxx.job=="職位: 北農總經理" && xxx.score>=60000 && xxx.level>=2 && xxx.binbin==1 && xxx.LL==1){
+                if(xxx.job=="職位: 北農總經理" && xxx.score>=60000 && xxx.level>=3 && xxx.binbin==1 && xxx.LL==1){
                     xxx.job = "職位: 高雄市長";
                     xxx.job_text.setText(xxx.job);
                     xxx.hanalert(2);
