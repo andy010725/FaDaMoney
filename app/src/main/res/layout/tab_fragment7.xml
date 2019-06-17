@@ -16,9 +16,8 @@
             android:id="@+id/button_zero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="144dp"
-            android:layout_marginLeft="144dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="38dp"
             android:layout_weight="1"
             android:text="實行"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,8 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="50dp"
             android:text="罷免"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -65,13 +63,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
             android:layout_marginTop="40dp"
-            android:text="購買10萬元"
+            android:text="購買100萬元"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="NT$.1999(期間特價)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/button_zero"
+            app:layout_constraintTop_toTopOf="@+id/button_zero" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="NT$ 100"
+            app:layout_constraintStart_toEndOf="@+id/onemili"
+            app:layout_constraintTop_toTopOf="@+id/onemili" />
 
     </android.support.constraint.ConstraintLayout>
 

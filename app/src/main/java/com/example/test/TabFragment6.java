@@ -120,6 +120,8 @@ public class TabFragment6 extends Fragment {
                 if(xxx.job=="職位: 高雄市長" && xxx.score>=230000 && xxx.level>=4 && xxx.TW==1) {
                     xxx.job = "職位: 台灣總統";
                     xxx.job_text.setText(xxx.job);
+                    xxx.setBack(4);
+                    xxx.background=4;
                     xxx.hanalert(3);
                     xxx.jobalert(1);
                     button_TWper.setEnabled(false);
@@ -135,6 +137,8 @@ public class TabFragment6 extends Fragment {
                 if(xxx.job=="職位: 台灣總統" && xxx.score>=1300000 && xxx.level>=6 && xxx.inwen==1 && xxx.CH==1) {
                     xxx.job = "職位: 中國總書記";
                     xxx.job_text.setText(xxx.job);
+                    xxx.setBack(5);
+                    xxx.background=5;
                     xxx.fadamoney += 100000;
                     xxx.jobalert(2);
                     button_CHper.setEnabled(false);

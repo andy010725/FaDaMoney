@@ -49,7 +49,7 @@ public class Main2Activity extends AppCompatActivity {
                 button1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score += 10000;
+                        score += 200000;
                         plusalert(0);
                         replyIntent.putExtra(EXTRA_REPLY, score);
                         setResult(RESULT_OK,replyIntent);
@@ -59,7 +59,7 @@ public class Main2Activity extends AppCompatActivity {
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score -= 10000;
+                        score -= 200000;
                         minusalert(0);
                         replyIntent.putExtra(EXTRA_REPLY,score);
                         setResult(RESULT_OK,replyIntent);
@@ -78,7 +78,7 @@ public class Main2Activity extends AppCompatActivity {
                 button1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score -= 20000;
+                        score -= 10000;
                         minusalert(1);
                         replyIntent.putExtra(EXTRA_REPLY, score);
                         setResult(RESULT_OK,replyIntent);
@@ -88,7 +88,7 @@ public class Main2Activity extends AppCompatActivity {
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score += 20000;
+                        score += 10000;
                         plusalert(1);
                         replyIntent.putExtra(EXTRA_REPLY,score);
                         setResult(RESULT_OK,replyIntent);
@@ -124,7 +124,6 @@ public class Main2Activity extends AppCompatActivity {
 
                     }
                 });
-
                 break;
             case"3":
                 title.setText(R.string.title_encounter3);
@@ -136,7 +135,7 @@ public class Main2Activity extends AppCompatActivity {
                 button1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score -= 40000;
+                        score -= 60000;
                         minusalert(3);
                         replyIntent.putExtra(EXTRA_REPLY, score);
                         setResult(RESULT_OK,replyIntent);
@@ -146,7 +145,7 @@ public class Main2Activity extends AppCompatActivity {
                 button2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        score += 40000;
+                        score += 60000;
                         plusalert(3);
                         replyIntent.putExtra(EXTRA_REPLY,score);
                         setResult(RESULT_OK,replyIntent);
@@ -155,7 +154,37 @@ public class Main2Activity extends AppCompatActivity {
                 });
 
                 break;
+            case"4":
+                title.setText("政策失利");
+                text1say.setText("被外界批評毫無建設\n在經濟上也沒有進步\n很多人民因此苦不堪言\n但這些終究是不實的抹黑\n面對這樣的情形\n你怎麼回應?");
+                image.setImageResource(R.drawable.policy_bad);
+                button1.setText("欺騙大眾");
+                button2.setText("承認過錯");
+
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        score += 500000;
+                        plusalert(0);
+                        replyIntent.putExtra(EXTRA_REPLY, score);
+                        setResult(RESULT_OK,replyIntent);
+
+                    }
+                });
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        score -= 500000;
+                        minusalert(0);
+                        replyIntent.putExtra(EXTRA_REPLY,score);
+                        setResult(RESULT_OK,replyIntent);
+
+                    }
+                });
+
+                break;
         }
+
     }
 
    /* public void backtomain(View view) {
@@ -176,16 +205,19 @@ public class Main2Activity extends AppCompatActivity {
         myAlertBuilder.setTitle("聲望提升");
         switch (i) {
             case 0 :
-                myAlertBuilder.setMessage("獲得一萬聲望");
+                myAlertBuilder.setMessage("獲得二十萬聲望");
                 break;
             case 1 :
-                myAlertBuilder.setMessage("獲得兩萬聲望");
+                myAlertBuilder.setMessage("獲得一萬聲望");
                 break;
             case  2:
                 myAlertBuilder.setMessage("獲得三萬聲望");
                 break;
             case  3:
-                myAlertBuilder.setMessage("獲得四萬聲望");
+                myAlertBuilder.setMessage("獲得六萬聲望");
+                break;
+            case  4:
+                myAlertBuilder.setMessage("獲得五十萬聲望");
                 break;
         }
         // Add the dialog buttons.
@@ -204,19 +236,22 @@ public class Main2Activity extends AppCompatActivity {
     public void minusalert(int i){
         AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(Main2Activity.this);
         ////SetTitleAndMessage////
-        myAlertBuilder.setTitle("聲望降梯");
+        myAlertBuilder.setTitle("聲望降低");
         switch (i) {
             case 0 :
-                myAlertBuilder.setMessage("扣除一萬聲望");
+                myAlertBuilder.setMessage("扣除二十萬聲望");
                 break;
             case 1:
-                myAlertBuilder.setMessage("扣除兩萬聲望");
+                myAlertBuilder.setMessage("扣除一萬聲望");
                 break;
             case 2:
                 myAlertBuilder.setMessage("扣除三萬聲望");
                 break;
             case 3:
-                myAlertBuilder.setMessage("扣除四萬聲望");
+                myAlertBuilder.setMessage("扣除六萬聲望");
+                break;
+            case 4:
+                myAlertBuilder.setMessage("扣除五十萬聲望");
                 break;
         }
         // Add the dialog buttons.

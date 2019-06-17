@@ -66,6 +66,7 @@ public class TabFragment7 extends Fragment {
                 xxx.suport1.setVisibility(View.INVISIBLE);
                 xxx.suport2.setVisibility(View.INVISIBLE);
                 xxx.suport3.setVisibility(View.INVISIBLE);
+                xxx.suport4.setVisibility(View.INVISIBLE);
                 ///道具///
                 xxx.LL = 0;
                 xxx.TW = 0;
@@ -81,6 +82,8 @@ public class TabFragment7 extends Fragment {
                 xxx.littleback4.setVisibility(View.INVISIBLE);
                 xxx.littleback5.setVisibility(View.INVISIBLE);
                 xxx.littleback6.setVisibility(View.INVISIBLE);
+                xxx.maxexp_view.setMin(0);
+                xxx.maxexp_view.setMax(1000);
             }
         });
         button3 = v.findViewById(R.id.onemili);
@@ -88,8 +91,8 @@ public class TabFragment7 extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity xxx = (MainActivity) getActivity();
-                xxx.score = xxx.score+100000;
-                xxx.exp = xxx.exp+100000;
+                xxx.score = xxx.score+1000000;
+                xxx.exp = xxx.exp+1000000;
             }
         });
         return v;

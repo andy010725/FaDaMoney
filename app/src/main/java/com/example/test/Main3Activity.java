@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class Main3Activity extends AppCompatActivity {
 
     TextView text1say;
+    TextView texttilte;
     public static final String EXTRA_REPLY =
             "com.example.android.extra.REPLY";
 
@@ -17,19 +18,23 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         text1say = findViewById(R.id.text1say);
+        texttilte = findViewById(R.id.texttitle);
         Intent intent = getIntent();
         ///////////////判斷要做什麼動作的變數///////////////////
         String movement_variable = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);/////////////////*****//////////////////
         /////////////////////////////////////////////////////////
         switch(movement_variable){
             case"1":
-                text1say.setText(R.string.han_saying1);
+                texttilte.setText(R.string.han_saying1);
+                text1say.setText(R.string.saying1);
                 break;
             case"2":
-                text1say.setText(R.string.han_saying2);
+                texttilte.setText(R.string.han_saying2);
+                text1say.setText(R.string.saying2);
                 break;
             case"3":
                 text1say.setText(R.string.han_saying3);
+                text1say.setText(R.string.saying3);
                 break;
 
         }

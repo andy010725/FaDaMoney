@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView suport1;
     ImageView suport2;
     ImageView suport3;
+    ImageView suport4;
     ImageView littleback1;
     ImageView littleback2;
     ImageView littleback3;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public int binbin = 0;
     public int inwen = 0;
     public int gwochun = 0;
+    public int gwenchun = 0;
     //////////////////////////////////////
     public int LL = 0;
     public int TW = 0;
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         suport1 = findViewById(R.id.suport1);
         suport2 = findViewById(R.id.suport2);
         suport3 = findViewById(R.id.suport3);
+        suport4 = findViewById(R.id.suport4);
         special = findViewById(R.id.special);
         littleback1 = findViewById(R.id.imageView11);
         littleback2 = findViewById(R.id.imageView12);
@@ -105,11 +108,49 @@ public class MainActivity extends AppCompatActivity {
         loading(settings);
         //////////初始設定//////////////////////
         textlevel.setText("等級: " + Integer.toString(level));
+        if (level==10){
+            textlevel.setText("等級: MAX");
+        }
         update(score);
         job_text.setText(job);
+        ////經驗///
         maxexp_view.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
         maxexp_view.setMax(1000);
-        //maxexp_view.setText("升等所需經驗: "+ "1000");
+        switch (level){
+            case 2 :
+                maxexp_view.setMin(1000);
+                maxexp_view.setMax(10000);
+                break;
+            case 3 :
+                maxexp_view.setMin(10000);
+                maxexp_view.setMax(60000);
+                break;
+            case 4 :
+                maxexp_view.setMin(60000);
+                maxexp_view.setMax(600000);
+                break;
+            case 5 :
+                maxexp_view.setMin(60000);
+                maxexp_view.setMax(600000);
+                break;
+            case 6 :
+                maxexp_view.setMin(3000000);
+                maxexp_view.setMax(8000000);
+                break;
+            case 7 :
+                maxexp_view.setMin(8000000);
+                maxexp_view.setMax(20000000);
+                break;
+            case 8 :
+                maxexp_view.setMin(20000000);
+                maxexp_view.setMax(40000000);
+                break;
+            case 9 :
+                maxexp_view.setMin(40000000);
+                maxexp_view.setMax(70000000);
+                break;
+        }
+        //站台部分///
         if (binbin == 1) {
             suport1.setVisibility(View.VISIBLE);
         }
@@ -118,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (gwochun == 1) {
             suport3.setVisibility(View.VISIBLE);
+        }
+        if (gwenchun == 1) {
+            suport4.setVisibility(View.VISIBLE);
         }
         if (LL == 1) {
             setlittleBack(1);
@@ -218,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(3000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "3000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(3);
                                     }
                                 case 5:
                                     if (exp > 3000000) {
@@ -228,7 +273,6 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(8000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "8000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                        lunchSecondAct(3);
                                     }
                                     break;
                                 case 6:
@@ -240,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
                                         maxexp_view.setMax(20000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "20000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
+                                        lunchSecondAct(0);
                                     }
                                     break;
                                 case 7:
@@ -248,30 +293,30 @@ public class MainActivity extends AppCompatActivity {
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         maxexp_view.setMin(20000000);
-                                        maxexp_view.setMax(50000000);
+                                        maxexp_view.setMax(40000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "50000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
-                                        lunchSecondAct(0);
+                                        lunchSecondAct(4);
                                     }
                                     break;
                                 case 8:
-                                    if (exp > 50000000) {
+                                    if (exp > 40000000) {
                                         level = 9;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
-                                        maxexp_view.setMin(50000000);
-                                        maxexp_view.setMax(100000000);
+                                        maxexp_view.setMin(40000000);
+                                        maxexp_view.setMax(70000000);
                                         //maxexp_view.setText("升等所需經驗: "+ "150000000");
                                         textlevel.setText("等級: " + Integer.toString(level));
                                     }
                                     break;
                                 case 9:
-                                    if (exp > 100000000) {
+                                    if (exp > 70000000) {
                                         level = 10;
                                         levelpoint += 1;
                                         editor.putInt("level", level).commit();
                                         //maxexp_view.setText("MAX");
-                                        textlevel.setText("等級: " + Integer.toString(level));
+                                        textlevel.setText("等級: MAX");
                                     }
                                     break;
                             }
@@ -327,6 +372,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("binbin", binbin);
         editor.putInt("inwen",inwen );
         editor.putInt("gwochun",gwochun );
+        editor.putInt("gwenchun",gwenchun );
         editor.putInt("LL",LL);
         editor.putInt("TW",TW);
         editor.putInt("CH",CH);
@@ -353,6 +399,7 @@ public class MainActivity extends AppCompatActivity {
         binbin = settings.getInt("binbin",binbin );
         inwen= settings.getInt("inwen",inwen );
         gwochun= settings.getInt("gwochun",gwochun );
+        gwenchun= settings.getInt("gwenchun",gwenchun );
         ////////道具/////////
         LL = settings.getInt("LL",LL);
         TW = settings.getInt("TW",TW);
@@ -378,7 +425,15 @@ public class MainActivity extends AppCompatActivity {
 
                 score_from_2 = data.getIntExtra(Main2Activity.EXTRA_REPLY, 0);
                 score = score+score_from_2;
-            }
+                if (score_from_2==60000){
+                    gwenchun=1;
+                    suport4.setVisibility(View.VISIBLE);
+                }
+                }
+                if (score_from_2==-60000){
+                    gwenchun=1;
+                    suport4.setVisibility(View.VISIBLE);
+                }
         }
     }
     ////韓語錄劇情/////
@@ -421,6 +476,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 3:
                 background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.earth));
+                break;
+                /////////////追加總統府//////////////
+            case 4:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.presidentialoffice));
+                break;
+                /////////紫禁城////////
+            case 5:
+                background_view.setBackgroundDrawable(getResources().getDrawable(R.drawable.chinacity));
                 break;
 
         }
