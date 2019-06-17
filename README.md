@@ -28,23 +28,23 @@
 ![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/1.gif)
 
 當達到某些條件後會遇到突發事件面臨困難的二擇一，這可是會嚴重影響聲望的選擇哦。
-![readpic/2.png]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/2.png)
 
 當然也有屬於主角的小語錄小故事可以看，可以慢慢提升職業與等級來解鎖觀看。
-![readpic/3.png]
-![readpic/4.gif]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/3.png)
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/4.gif)
 
 提升等級後你便可以獲得技能點數來強化你的各種技能來提升你的聲望。
-![readpic/5.png]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/5.png)
 
 在提高聲望方面，請別人來幫忙站台這是一定要的啦。
-![readpic/6.gif]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/6.gif)
 
 還有許多小道具可以購買哦(有些可能是你新職位需要的道具)
-![readpic/7.gif]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/7.gif)
 
 
 看看競選高雄市長需要什麼東西吧，齊全後便可競選來獲得新職位。
-![readpic/.gif]
+![image](https://github.com/andy010725/FaDaMoney/blob/master/readpic/8.gif)
 
 ## 2019.6 NYA_PASS版權所有
