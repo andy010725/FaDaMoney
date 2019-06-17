@@ -181,7 +181,7 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="27dp"
             android:text="縮短每次動作的單位時間"
             android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/textView4"

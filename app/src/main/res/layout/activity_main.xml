@@ -17,17 +17,14 @@
         <TextView
             android:id="@+id/score"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="17dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:text="Score : 0 "
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView16"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +33,6 @@
             android:layout_width="wrap_content"
             android:layout_height="14dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:text="+1/單位時間 "
             android:textColor="@android:color/white"
@@ -49,9 +45,8 @@
             android:id="@+id/textjob"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:text="職位: 北農總經理"
             android:textColor="@android:color/white"
@@ -76,20 +71,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             android:text="經驗值"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/score" />
+            app:layout_constraintTop_toBottomOf="@+id/score_persec" />
 
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="170dp"
             android:layout_height="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="4dp"
             app:layout_constraintStart_toEndOf="@+id/textView16"
             app:layout_constraintTop_toTopOf="@+id/textView16" />
 
@@ -105,19 +99,6 @@
             android:background="@drawable/taipei"/>
 
 
-        <TextView
-            android:id="@+id/text_saying"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/white"
-            android:text="發大財!!!"
-            android:textColor="@android:color/black"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <ImageView
             android:id="@+id/suport4"
@@ -240,6 +221,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/hanzon" />
+        <TextView
+            android:id="@+id/text_saying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/white"
+            android:text="發大財!!!"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -98,7 +98,7 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="33dp"
             android:text="為了中華民國，不惜粉身碎骨。"
             android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/textView4"

@@ -22,10 +22,9 @@
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="154dp"
-                android:layout_height="17dp"
+                android:layout_width="190dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
                 android:text="9999999+10等+無限手套"
                 app:layout_constraintStart_toEndOf="@+id/textView12"
