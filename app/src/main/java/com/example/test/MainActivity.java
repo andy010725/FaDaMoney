@@ -590,7 +590,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 10:
                 myAlertBuilder.setTitle("等級8");
-                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選中國總書記");
+                myAlertBuilder.setMessage("獲得技1能點\n已經可以競選地球領導人");
                 break;
             case 11:
                 myAlertBuilder.setTitle("等級9");

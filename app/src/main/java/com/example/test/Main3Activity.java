@@ -33,7 +33,7 @@ public class Main3Activity extends AppCompatActivity {
                 text1say.setText(R.string.saying2);
                 break;
             case"3":
-                text1say.setText(R.string.han_saying3);
+                texttilte.setText(R.string.han_saying3);
                 text1say.setText(R.string.saying3);
                 break;
 
