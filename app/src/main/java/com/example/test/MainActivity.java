@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
         loading(settings);
         //////////初始設定//////////////////////
         textlevel.setText("等級: " + Integer.toString(level));
+        if (level==1){
+            jobalert(15);
+        }
         if (level==10){
             textlevel.setText("等級: MAX");
         }
@@ -603,6 +606,11 @@ public class MainActivity extends AppCompatActivity {
             case 13:
                 myAlertBuilder.setTitle("等級2");
                 myAlertBuilder.setMessage("獲得技1能點\n解鎖韓語錄\n您獲得新的韓語綠");
+                break;
+                /////////////開始指南/////////////
+            case 15:
+                myAlertBuilder.setTitle("光頭發大財");
+                myAlertBuilder.setMessage("你頭髮掉光，變成了一個光頭。\n\n你決定在街頭宣傳你的理念。\n\n努力增加聲望獲得大眾的肯定吧!!!\n\n(演說每秒增加聲望或點擊發大財獲得聲望)");
                 break;
         }
         // Add the dialog buttons.

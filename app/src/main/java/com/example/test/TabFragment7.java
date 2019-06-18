@@ -90,6 +90,7 @@ public class TabFragment7 extends Fragment {
                 xxx.littleback6.setVisibility(View.INVISIBLE);
                 xxx.maxexp_view.setMin(0);
                 xxx.maxexp_view.setMax(1000);
+                xxx.jobalert(15);
                 ////////////////為了按鍵解鎖//////////////////
                 editor.putInt("level", xxx.level).commit();
                 editor.putInt("b_able1", 0).commit();
