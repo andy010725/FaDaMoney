@@ -112,6 +112,7 @@ public class TabFragment1 extends Fragment {
                 xxx.image.setImageResource(R.drawable.hanzon3);
                 xxx.text_saying.setVisibility(View.VISIBLE);
                 xxx.special.setVisibility(View.VISIBLE);
+                xxx.playFaDa();
             }
         });
         ///////收購///////

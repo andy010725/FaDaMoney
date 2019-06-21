@@ -2,6 +2,7 @@ package com.example.test;
 
 import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +11,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -42,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
     public int sec = 1000;
     int background=1;
     public String job = "職位: 無業";
+
+    private static MediaPlayer mediaPlayer;
+
     TextView Socre_text;
     TextView job_text;
     TextView text_saying;
@@ -62,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
     TextView background_view;
     TextView exp_view;
     ProgressBar maxexp_view;
+
+    SoundPool snd;
+    int fada;
     ///////能力值變數///////////////
     public int exaggerate = 1;
     public int blame = 1;
@@ -186,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         if (cute == 1) {
             setlittleBack(6);
         }
+
         ////////////開始計時的線呈///////////////
         new Thread(new Runnable() {
             @Override
@@ -359,7 +370,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
+        ////////////撥放音樂////////////
+        playMusic(this);
 
+        snd = new SoundPool(10, AudioManager.STREAM_SYSTEM,5);
+        fada = snd.load(this, R.raw.newfada, 0);
     }
 
     /////////////////以上是mainActivity/////////////////////////////
@@ -611,7 +626,6 @@ public class MainActivity extends AppCompatActivity {
             case 15:
                 myAlertBuilder.setTitle("光頭發大財");
                 myAlertBuilder.setMessage("你頭髮掉光，變成了一個光頭。\n\n你決定在街頭宣傳你的理念。\n\n努力增加聲望獲得大眾的肯定吧!!!\n\n(演說每秒增加聲望或點擊發大財獲得聲望)");
-                break;
         }
         // Add the dialog buttons.
         myAlertBuilder.setPositiveButton("OK", new
@@ -623,6 +637,15 @@ public class MainActivity extends AppCompatActivity {
         //
         myAlertBuilder.show();
         // Create and show the AlertDialog.
+    }
+    public static void playMusic(Context c)
+    {
+        mediaPlayer = MediaPlayer.create(c, R.raw.aaa);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+    }
+    public void playFaDa(){
+        snd.play(fada,1,1,0,0,1);
     }
 
 }

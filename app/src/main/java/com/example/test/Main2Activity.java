@@ -2,6 +2,7 @@ package com.example.test;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,6 @@ public class Main2Activity extends AppCompatActivity {
         ///////////////判斷要做什麼動作的變數///////////////////
         String movement_variable = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);/////////////////*****//////////////////
         /////////////////////////////////////////////////////////
-
 
         ////////////////////////////////////////////////////////
         switch(movement_variable){
