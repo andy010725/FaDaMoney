@@ -11,15 +11,11 @@
 .
 
 『發大財』你這樣說道
-
-.
-
-
 世界於此動盪，發生天翻地覆的變化。
 
 而你，光頭，能拯救一切.....
 
-.
+![image](https://github.com/andy010725/FaDaMoney/blob/master/pictures/%E5%B0%81%E9%9D%A2.png)
 
 ## 玩法
 
